@@ -1,0 +1,7 @@
+standard-app-packages
+iron:router
+flemay:less-autoprefixer
+accounts-base
+accounts-password
+insecure
+momentjs:moment

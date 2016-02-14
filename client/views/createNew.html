@@ -1,0 +1,17 @@
+<template name="createNew">
+    <h1>Создание новой заявки</h1>
+
+    <form id="createIssue">
+
+        <input type="text" placeholder="Заявленная неисправность" id="issue"/>
+        <select>
+            <option disabled>Выберите мастера</option>
+            <option value="Всем">Всем</option>
+            <option value="Слюсарь">Слюсарь</option>
+            <option value="Горяинов">Горяинов</option>
+            <option value="Барсуков">Барсуков</option>
+        </select><br/>
+        <textarea name="input" id="issueComment"></textarea><br/>
+        <input type="submit" value="Создать заявку"/>
+    </form>
+</template>

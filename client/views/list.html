@@ -1,0 +1,22 @@
+<template name="list">
+<h2>Открытые заявки</h2>
+    <div class="separator">
+        <span class="menu"><a href="/createNew">Создать заявку</a></span>
+    </div>
+    <table id="issueList">
+            <tr class="header">
+                <td>Дата создания</td>
+                <td>Дата назначения</td>
+                <td>Исполнитель заявки</td>
+                <td>Краткое описание</td>
+            </tr>
+        {{#each issues}}
+            <tr>
+                <td>{{createdAt}}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><a href="#" clas="viewIssue" id="{{_id}}">{{title}}</a></td>
+            </tr>
+        {{/each}}
+    </table>
+</template>
