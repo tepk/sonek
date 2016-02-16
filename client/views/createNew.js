@@ -18,7 +18,7 @@ Template.createNew.events({
         var newMessage = $("#issueComment").val();
 
         Issues.insert({
-
+            performer: $("#selector").val(),
             title: $("#issue").val(),                           // title
             message: $("#issueComment").val(),                  // message
             createdAt: moment().format('HH:mm, DD MMMM YYYY')   // creation timestamp
