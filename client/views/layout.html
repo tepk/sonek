@@ -5,8 +5,12 @@
 </head>
 
 <template name="layout">
-    <h1>Welcome to ESTP SONEK!</h1>
-    <div id="marginalia">
-    {{> yield}}
+    <div class="page-wrap">
+        <h1>Welcome to ESTP SONEK!</h1>
+
+        <div id="marginalia">
+            {{> yield}}
+        </div>
     </div>
+    {{>copyright}}
 </template>
