@@ -13,7 +13,7 @@ Template.createNew.helpers({
 })
 
 Template.createNew.events({
-    "submit #createIssue": function (e, t) {
+    "submit #createIssue": function (e) {
         var newTitle = $("#issue").val();
         var newMessage = $("#issueComment").val();
 
@@ -21,7 +21,8 @@ Template.createNew.events({
             performer: $("#selector").val(),
             title: $("#issue").val(),                           // title
             message: $("#issueComment").val(),                  // message
-            createdAt: moment().format('HH:mm, DD MMMM YYYY')   // creation timestamp
+            createdAt: new Date,                                // creation timestamp
+            issueActive: true                                   // check, if issue closed
         });
         console.log('it works!');
         Router.go('/');

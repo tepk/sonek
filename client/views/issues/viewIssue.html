@@ -1,0 +1,15 @@
+<template name="viewIssue">
+
+    <h2>{{data.title}}</h2>
+
+    <p>Назначено: {{data.performer}}, {{data.createdAt}}</p>
+
+    <p>{{data.message}}</p>
+
+    <div class="seperator">
+        <input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/>
+    <!-- {{#if issueActive}} -->
+        <input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/>
+    <!-- {{/if}} -->
+    </div>
+</template>

@@ -12,11 +12,14 @@
             </tr>
         {{#each issues}}
             <tr>
-                <td>{{createdAt}}</td>
+                <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{createdAt}}</a></td>
                 <td>&nbsp;</td>
                 <td>{{performer}}</td>
                 <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{title}}</a></td>
             </tr>
         {{/each}}
     </table>
+    <div class="separator">
+        <span class="hideComplete">Спрятать закрытые заявки</span>
+    </div>
 </template>
