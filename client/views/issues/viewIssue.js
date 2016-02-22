@@ -14,8 +14,7 @@ Template.viewIssue.helpers({
     },
 
     issueActive: function () {
-        var a = Issues.findOne(this._id)
-        console.log(a)
+        return Issues.findOne(this._id).issueActive;
     }
 })
 
@@ -29,11 +28,27 @@ Template.viewIssue.events({
 })
 
 Template.viewIssue.events({
-    "click #closeIssue": function (e) {
+    /* "click #closeIssue": function (e) {
         console.log(Issues.findOne({_id: this._id}).issueActive);
         Issues.update(this._id, {
             $set: {
                 issueActive: false
+            }
+        });
+        e.preventDefault();
+        return false;
+    }, */
+    "click #closeIssue": function(e) {
+        Router.go('/closeIssue/' + $(e.currentTarget).attr("class"));
+        e.preventDefault();
+        return false;
+    },
+
+    "click #resumeIssue": function (e) {
+        console.log(Issues.findOne({_id: this._id}).issueActive);
+        Issues.update(this._id, {
+            $set: {
+                issueActive: true
             }
         });
         e.preventDefault();

@@ -1,15 +1,21 @@
 <template name="viewIssue">
+    {{#if Template.subscriptionsReady}}
+        <h2>{{data.title}}</h2>
+        {{#unless issueActive}}
+            <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
+        {{/unless}}
+        <p>Назначено: {{data.performer}}, {{data.createdAt}}</p>
 
-    <h2>{{data.title}}</h2>
+        <p>{{data.message}}</p>
 
-    <p>Назначено: {{data.performer}}, {{data.createdAt}}</p>
+        <div class="seperator">
+            {{#if issueActive}}
+                <input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/>
+                <input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/>
+            {{else}}
+                <input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>
+            {{/if}}
 
-    <p>{{data.message}}</p>
-
-    <div class="seperator">
-        <input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/>
-    <!-- {{#if issueActive}} -->
-        <input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/>
-    <!-- {{/if}} -->
-    </div>
+        </div>
+    {{/if}}
 </template>

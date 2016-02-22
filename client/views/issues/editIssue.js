@@ -25,14 +25,13 @@ Template.editIssue.events({
                 performer: $("#selector").val(),
                 title: $("#issue").val(),                           // title
                 message: $("#issueComment").val(),                  // message
-                createdAt: new Date,  // creation timestamp
+                createdAt: new Date,                                // creation timestamp
                 issueClosed: false                                  // mark issue unclosed
             }
         });
         console.log('it works!');
-        Router.go('/');
+        Router.go('/viewIssue/' + $(e.currentTarget).attr("class"));
         e.preventDefault();
         return false;
     }
-
 })

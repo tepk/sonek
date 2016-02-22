@@ -28,3 +28,14 @@ Router.route('/editIssue/:_id', function () {
     });
 
 }, {name: 'editIssue'});
+
+Router.route('/closeIssue/:_id', function () {
+    var params = this.params;
+    var id = params._id;
+    this.render('closeIssue', {
+        data: function () {
+            return {_id: this.params._id};
+        }
+    });
+
+}, {name: 'closeIssue'});

@@ -1,0 +1,15 @@
+<template name="closeIssue">
+    {{#if Template.subscriptionsReady}}
+        {{#if issueActive}}
+            <h2>Прокомментировать и закрыть заявку</h2>
+
+            <form id="closeComment" class="{{data._id}}">
+                <textarea id="comment"></textarea>
+                <input type="submit" value="Оставить комментарий и закрыть заявку"/>
+            </form>
+        {{/if}}
+        {{#unless issueActive}}
+            {{> issueClosed}}
+        {{/unless}}
+    {{/if}}
+</template>

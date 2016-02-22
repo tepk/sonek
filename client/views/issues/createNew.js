@@ -22,11 +22,14 @@ Template.createNew.events({
             title: $("#issue").val(),                           // title
             message: $("#issueComment").val(),                  // message
             createdAt: new Date,                                // creation timestamp
-            issueActive: true                                   // check, if issue closed
-        });
-        console.log('it works!');
-        Router.go('/');
+            issueActive: true,                                  // check, if issue closed
+
+        },
+            function (err, id) {
+                console.log(id)
+                Router.go('/viewIssue/' + id);
+            }
+        );
         e.preventDefault();
-        return false;
     }
 })

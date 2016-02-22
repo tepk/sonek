@@ -1,15 +1,16 @@
 <template name="list">
-<h2>Открытые заявки</h2>
+    <h2>Открытые заявки</h2>
+
     <div class="separator">
         <span class="menu"><a href="{{pathFor route='createNew'}}">Создать заявку</a></span>
     </div>
     <table id="issueList">
-            <tr class="header">
-                <td>Дата создания</td>
-                <td>Дата назначения</td>
-                <td>Исполнитель заявки</td>
-                <td>Краткое описание</td>
-            </tr>
+        <tr class="header">
+            <td>Дата создания</td>
+            <td>Дата назначения</td>
+            <td>Исполнитель заявки</td>
+            <td>Краткое описание</td>
+        </tr>
         {{#each issues}}
             <tr>
                 <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{createdAt}}</a></td>
@@ -20,6 +21,6 @@
         {{/each}}
     </table>
     <div class="separator">
-        <span class="hideComplete">Спрятать закрытые заявки</span>
+        <span class="hide"><input type="checkbox" class="hideComplete"/>Спрятать закрытые заявки</span>
     </div>
 </template>
