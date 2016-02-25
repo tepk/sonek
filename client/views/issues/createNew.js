@@ -1,15 +1,17 @@
 Template.createNew.onCreated(function () {
-
+    this.subscribe('crew');
 })
 
 Template.createNew.onRendered(function () {
+    this.$("#datetimepicker").datetimepicker({
+        onChangeDateTime:timeLogic,
+        onShow:timeLogic
 
+
+    });
 })
 
 Template.createNew.helpers({
-    data: function () {
-        return this;
-    }
 })
 
 Template.createNew.events({
@@ -23,7 +25,7 @@ Template.createNew.events({
             message: $("#issueComment").val(),                  // message
             createdAt: new Date,                                // creation timestamp
             issueActive: true,                                  // check, if issue closed
-
+            assignDate: $("#datetimepicker").val(),             // assign date and time
         },
             function (err, id) {
                 console.log(id)

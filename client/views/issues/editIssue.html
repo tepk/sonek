@@ -3,13 +3,13 @@
 
     <form id="editIssue" class="{{data._id}}">
 
-        <input type="text" value="{{data.title}}" id="issue"/>
+        <input type="text" value="{{data.title}}" id="issue"/><br />
+        <input type="text" id="datetimepicker" value="{{data.assignDate}}">
         <select id="selector">
-            <option disabled>Выберите мастера</option>
             <option value="Всем">Всем</option>
-            <option value="Слюсарь">Слюсарь Алексей</option>
-            <option value="Горяинов">Горяинов Вячеслав</option>
-            <option value="Барсуков">Барсуков Григорий</option>
+            {{#each crew}}
+                <option value="{{userId}}">{{lname}} {{fname}}</option>
+            {{/each}}
         </select><br/>
         <textarea name="input" id="issueComment" value="{{data.message}}"></textarea><br/>
         <input type="submit" value="Редактировать заявку"/>

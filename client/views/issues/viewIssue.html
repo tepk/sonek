@@ -1,10 +1,11 @@
 <template name="viewIssue">
+
     {{#if Template.subscriptionsReady}}
         <h2>{{data.title}}</h2>
         {{#unless issueActive}}
             <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
         {{/unless}}
-        <p>Назначено: {{data.performer}}, {{data.createdAt}}</p>
+        <p>Назначено: {{data.performer}}, {{data.assignDate}}</p>
 
         <p>{{data.message}}</p>
 
@@ -17,5 +18,8 @@
             {{/if}}
 
         </div>
+        {{else}}
+        {{> loading}}
     {{/if}}
+
 </template>

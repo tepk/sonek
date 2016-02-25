@@ -1,17 +1,19 @@
 Template.editIssue.onCreated(function () {
     this.subscribe('recent_issues', this.data._id);
-    console.log(this.data._id);
+    this.subscribe('crew');
+
 })
 
 Template.editIssue.onRendered(function () {
-
+    this.$("#datetimepicker").datetimepicker({
+        onChangeDateTime:timeLogic,
+        onShow:timeLogic
+    });
 })
 
 Template.editIssue.helpers({
     data: function () {
         return Issues.findOne(this._id);
-        console.log(this._id)
-
     }
 })
 
@@ -26,7 +28,8 @@ Template.editIssue.events({
                 title: $("#issue").val(),                           // title
                 message: $("#issueComment").val(),                  // message
                 createdAt: new Date,                                // creation timestamp
-                issueClosed: false                                  // mark issue unclosed
+                issueClosed: false,                                 // mark issue unclosed
+                assignDate: $("#datetimepicker").val(),
             }
         });
         console.log('it works!');

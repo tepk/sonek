@@ -5,3 +5,4 @@ accounts-base
 accounts-password
 insecure
 momentjs:moment
+chrismbeckett:toastr

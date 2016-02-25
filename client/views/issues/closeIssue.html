@@ -7,9 +7,8 @@
                 <textarea id="comment"></textarea>
                 <input type="submit" value="Оставить комментарий и закрыть заявку"/>
             </form>
-        {{/if}}
-        {{#unless issueActive}}
+            {{else}}
             {{> issueClosed}}
-        {{/unless}}
+        {{/if}}
     {{/if}}
 </template>
