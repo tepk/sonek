@@ -18,6 +18,10 @@ Template.createNew.events({
     "submit #createIssue": function (e) {
         var newTitle = $("#issue").val();
         var newMessage = $("#issueComment").val();
+        if (!newTitle) {
+            toastr.error('Поле &laquo;Заявленная неисправность&raquo; не может быть пустым', 'Ошибка');
+            return false
+        }
 
         Issues.insert({
             performer: $("#selector").val(),
@@ -28,7 +32,6 @@ Template.createNew.events({
             assignDate: $("#datetimepicker").val(),             // assign date and time
         },
             function (err, id) {
-                console.log(id)
                 Router.go('/viewIssue/' + id);
             }
         );

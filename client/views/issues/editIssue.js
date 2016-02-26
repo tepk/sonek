@@ -21,6 +21,10 @@ Template.editIssue.events({
     "submit #editIssue": function (e) {
         var newTitle = $("#issue").val();
         var newMessage = $("#issueComment").val();
+        if (!newTitle) {
+            toastr.error('Поле &laquo;Заявленная неисправность&raquo; не может быть пустым', 'Ошибка');
+            return false
+        }
 
         Issues.update(this._id, {
             $set: {
@@ -28,13 +32,10 @@ Template.editIssue.events({
                 title: $("#issue").val(),                           // title
                 message: $("#issueComment").val(),                  // message
                 createdAt: new Date,                                // creation timestamp
-                issueClosed: false,                                 // mark issue unclosed
                 assignDate: $("#datetimepicker").val(),
             }
         });
-        console.log('it works!');
         Router.go('/viewIssue/' + $(e.currentTarget).attr("class"));
-        e.preventDefault();
         return false;
     }
 })

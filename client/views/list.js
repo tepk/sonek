@@ -12,16 +12,27 @@ Template.list.helpers({
     issues: function () {
         return Issues.find({}, {sort: {assignDate: 1}});
     },
-    performer:function () {
+    loggedIn: function () {
+        var fio = Crew.findOne({userId: Meteor.userId()});
+        if (fio) {
+            return fio.lname + " " + fio.fname;
+        }
+    },
+    performer: function () {
         var crew = Crew.findOne({userId: this.performer});
-        if(crew){
-            return crew.fname + " " + crew.lname;
+        if (crew) {
+            return crew.lname + " " + crew.fname;
+        } else {
+            return "всем"
         }
     }
 })
 
 Template.list.events({
-    "click .hideComplete": function() {
+    "click .hideComplete": function () {
         console.log(this.checked)
+    },
+    "click .logOut": function () {
+        Accounts.logout()
     }
 })

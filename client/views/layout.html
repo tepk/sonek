@@ -7,11 +7,15 @@
 
 <template name="layout">
     <div class="page-wrap">
-        <a href="/" id="logo"><img src="/images/logo.png" /></a>
+        {{#if currentUser}}
+            <a href="/" id="logo"><img src="/images/logo.png"/></a>
 
-        <div id="marginalia">
-            {{> yield}}
-        </div>
+            <div id="marginalia">
+                {{> yield}}
+            </div>
+        {{else}}
+            {{> login}}
+        {{/if}}
     </div>
     {{>copyright}}
 </template>

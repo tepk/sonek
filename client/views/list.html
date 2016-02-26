@@ -1,4 +1,5 @@
 <template name="list">
+    <h3>{{loggedIn}} (<span  class="logOut">выход</span>)</h3>
     <h2>Открытые заявки</h2>
     {{#if Template.subscriptionsReady}}
     <div class="separator">
@@ -8,7 +9,7 @@
         <tr class="header">
             <td>Дата создания</td>
             <td>Дата назначения</td>
-            <td>Исполнитель заявки</td>
+            <td>Назначено</td>
             <td>Краткое описание</td>
         </tr>
         {{#each issues}}
