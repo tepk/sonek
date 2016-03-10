@@ -1,6 +1,7 @@
 Template.viewIssue.onCreated(function () {
     this.subscribe('recent_issues', this.data._id);
     this.subscribe('crew');
+    this.subscribe('address');
 })
 
 Template.viewIssue.onRendered(function () {
@@ -23,6 +24,20 @@ Template.viewIssue.helpers({
         if (crew) {
             return crew.lname + " " + crew.fname;
         }
+    },
+    creator: function () {
+        var creator = Crew.findOne({
+            userId: Issues.findOne({_id: this._id}).createdBy
+        });
+        if (creator) {
+            return creator.lname + " " + creator.fname;
+
+        }
+
+    },
+    address: function () {
+
+        return Address.findOne({_id: Issues.findOne({_id: this._id}).address}).street
     }
 })
 
@@ -32,7 +47,7 @@ Template.viewIssue.events({
         return false;
     },
 
-    "click #closeIssue": function(e) {
+    "click #closeIssue": function (e) {
         Router.go('/closeIssue/' + $(e.currentTarget).attr("class"));
         return false;
     },

@@ -5,9 +5,10 @@
         {{#unless issueActive}}
             <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
         {{/unless}}
-        <p>Назначено: {{performer}}, {{data.assignDate}}</p>
+        <p>Адрес назначения: {{address}}<br/>Создатель заявки: {{creator}}
+            <br/>Назначено: {{performer}} {{data.assignDate}}</p>
 
-        <p>{{data.message}}</p>
+        <p>{{{data.message}}}</p>
 
         <div class="seperator">
             {{#if issueActive}}
@@ -18,7 +19,7 @@
             {{/if}}
 
         </div>
-        {{else}}
+    {{else}}
         {{> loading}}
     {{/if}}
 

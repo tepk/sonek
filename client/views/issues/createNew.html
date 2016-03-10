@@ -3,15 +3,29 @@
 
     <form id="createIssue">
 
-        <input type="text" placeholder="Заявленная неисправность" id="issue"/><br/>
-        <input type="text" id="datetimepicker">
+        Заявленная неисправность: <input type="text" placeholder="Заявленная неисправность" id="issue"/><br/>
+        Назначено:
         <select id="selector">
             <option value="Всем">Всем</option>
             {{#each crew}}
                 <option value="{{userId}}">{{lname}} {{fname}}</option>
             {{/each}}
-        </select><br/>
-        <textarea name="input" id="issueComment"></textarea><br/>
+        </select>
+
+        <select id="districtor">
+            <option value="Дзержинский">Дзержинский</option>
+            <option value="Октябрьский">Октябрьский</option>
+            <option value="Советский">Советский</option>
+
+
+        </select>
+        <select id="addressor">
+            {{#each address}}
+                <option value="{{_id}}">{{street}}</option>
+            {{/each}}
+        </select>
+        Дата назначения: <input type="text" id="datetimepicker" placeholder="Дата назначения"><br/>
+        <textarea name="input" id="input"></textarea><br/>
         <input type="submit" value="Создать заявку"/>
     </form>
 </template>
