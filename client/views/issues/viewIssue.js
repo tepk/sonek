@@ -34,10 +34,6 @@ Template.viewIssue.helpers({
 
         }
 
-    },
-    address: function () {
-
-        return Address.findOne({_id: Issues.findOne({_id: this._id}).address}).street
     }
 })
 

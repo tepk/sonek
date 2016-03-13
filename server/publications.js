@@ -7,7 +7,11 @@ Meteor.publish('crew', function() {
 })
 
 Meteor.publish('address', function() {
-    return Address.find({});
+    return Address.find({}, {fields: {district: 1}});
+})
+
+Meteor.publish('addressByDistrict', function(id) {
+    return Address.find({_id: id});
 })
 
 

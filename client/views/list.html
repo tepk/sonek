@@ -1,9 +1,8 @@
 <template name="list">
-    <h3>{{loggedIn}} (<span  class="logOut">выход</span>)</h3>
     <h2>Открытые заявки</h2>
     {{#if Template.subscriptionsReady}}
     <div class="separator">
-        <span class="menu"><a href="{{pathFor route='createNew'}}">Создать заявку</a></span>
+        <span class="floatRight"><a href="{{pathFor route='createNew'}}">Создать заявку</a></span>
     </div>
     <table id="issueList">
         <tr class="header">

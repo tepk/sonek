@@ -5,6 +5,7 @@ Accounts.onCreateUser(function(options, user) {
         fname: options.profile.fname,
         sname: options.profile.sname,
         lname: options.profile.lname,
+        isAdmin: options.profile.isAdmin,
         userId: user._id
     })
     return user;

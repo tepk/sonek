@@ -7,11 +7,9 @@ Template.editIssue.onCreated(function () {
 
 Template.editIssue.onRendered(function () {
     this.$("#datetimepicker").datetimepicker({
-        onChangeDateTime:timeLogic,
-        onShow:timeLogic
+        onChangeDateTime: timeLogic,
+        onShow: timeLogic
     });
-    $.cleditor.defaultOptions.width = 790;
-    this.$("#input").cleditor();
 
 
 })
@@ -20,6 +18,27 @@ Template.editIssue.helpers({
     data: function () {
         return Issues.findOne(this._id);
 
+    },
+    isSelected: function (userId) {
+        var currIssue = Issues.findOne(
+            {
+                _id: Template.parentData(1)._id
+            }
+        )
+
+        var worker = (Meteor.users.findOne(
+            {
+                _id: Issues.findOne(
+                    {
+                        _id: Template.parentData(1)._id
+                    }
+                ).performer
+            }
+        ))._id
+
+        if (worker === this.userId) {
+            return "selected"
+        }
     }
 
 

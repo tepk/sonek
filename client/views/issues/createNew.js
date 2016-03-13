@@ -1,6 +1,13 @@
 Template.createNew.onCreated(function () {
+    var self = this;
     this.subscribe('crew');
     this.subscribe('address');
+    self.selectedDistrict = new ReactiveVar();
+    self.autorun(function(){
+        if(self.selectedDistrict.get()){
+            self.subscribe('addressByDistrict', self.selectedDistrict.get());
+        }
+    })
 })
 
 Template.createNew.onRendered(function () {
@@ -12,15 +19,20 @@ Template.createNew.onRendered(function () {
     this.$("#input").cleditor();
 
 
-
 })
 
 Template.createNew.helpers({
-        address: function () {
+    address: function () {
+        return Address.findOne({_id: Template.instance().selectedDistrict.get()});
+    },
 
-        return Address.find({}, {sort: {address: 1}});
-
+    isDisabled: function () {
+        return Template.instance().selectedDistrict.get() ? "" : "disabled"
     }
+     /*,
+    districts: function() {
+        return Address.find({});
+    } */
 })
 
 Template.createNew.events({
@@ -47,5 +59,9 @@ Template.createNew.events({
             }
         );
         e.preventDefault();
+    },
+    "change .district-select": function(e,t){
+        console.log($(e.currentTarget).val())
+        t.selectedDistrict.set($(e.currentTarget).val());
     }
 })

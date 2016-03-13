@@ -1,4 +1,5 @@
 <template name="editIssue">
+    {{#if Template.subscriptionsReady}}
     <h1>Редактирование заявки</h1>
 
     <form id="editIssue" class="{{data._id}}">
@@ -7,11 +8,12 @@
         <select id="selector">
             <option value="Всем">Всем</option>
             {{#each crew}}
-                <option class="{{userId}}" value="{{userId}}">{{lname}} {{fname}}</option>
+                <option {{isSelected userId}} class="{{userId}}" value="{{userId}}">{{lname}} {{fname}}</option>
             {{/each}}
         </select>
         Дата назначения: <input type="text" id="datetimepicker" value="{{data.assignDate}}"><br/>
-        <textarea name="input" id="input" value="{{data.message}}"></textarea><br/>
+        {{> cleditor value=data.message id="input"}}<br/>
         <input type="submit" value="Редактировать заявку"/>
     </form>
+    {{/if}}
 </template>

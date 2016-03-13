@@ -31,7 +31,8 @@ Template.createCrew.events({
                 username: username, password: password, profile: {
                     fname: $("#fname").val(),                    //first name
                     sname: $("#sname").val(),                    //second name
-                    lname: $("#lname").val()                     //last name
+                    lname: $("#lname").val(),                    //last name
+                    isAdmin: false
                 }
             },
             globalUI.callback(function(){

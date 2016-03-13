@@ -12,12 +12,7 @@ Template.list.helpers({
     issues: function () {
         return Issues.find({}, {sort: {assignDate: 1}});
     },
-    loggedIn: function () {
-        var fio = Crew.findOne({userId: Meteor.userId()});
-        if (fio) {
-            return fio.lname + " " + fio.fname;
-        }
-    },
+
     performer: function () {
         var crew = Crew.findOne({userId: this.performer});
         if (crew) {

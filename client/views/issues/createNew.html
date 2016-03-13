@@ -12,16 +12,16 @@
             {{/each}}
         </select>
 
-        <select id="districtor">
-            <option value="Дзержинский">Дзержинский</option>
-            <option value="Октябрьский">Октябрьский</option>
-            <option value="Советский">Советский</option>
-
-
+        <select class="district-select">
+                <option value="" selected disabled>Выбирете район</option>
+            {{#each districts}}
+                <option value="{{_id}}">{{district}}</option>
+            {{/each}}
         </select>
-        <select id="addressor">
-            {{#each address}}
-                <option value="{{_id}}">{{street}}</option>
+        <select id="addressor" {{isDisabled}}>
+                <option value="" selected disabled>Выбирете улицу</option>
+            {{#each address.streets}}
+                <option value="{{this}}">{{this}}</option>
             {{/each}}
         </select>
         Дата назначения: <input type="text" id="datetimepicker" placeholder="Дата назначения"><br/>
