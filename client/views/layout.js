@@ -20,5 +20,9 @@ Template.layout.helpers({
 })
 
 Template.layout.events({
-
+    "click .logOut": function () {
+        console.log('click')
+        Meteor.logout();
+        return false;
+    }
 })

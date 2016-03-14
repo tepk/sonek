@@ -2,30 +2,57 @@
     <h1>Создание новой заявки</h1>
 
     <form id="createIssue">
+        <table id="newIssue">
+            <tr>
+                <td>Номер телефона (10 цифр):</td>
+                <td colspan="3"><i>+7&nbsp;</i><input type="number" placeholder="1234567890" id="pnumber"/></td>
+            </tr>
+            <tr>
+                <td>Заявленная неисправность:</td>
+                <td colspan="3"><input type="text" placeholder="Кратко, что именно случилось" id="issue"/></td>
+            </tr>
+            <tr>
+                <td>Назначено:</td>
+                <td>
+                    <select id="selector">
+                        <option value="Всем">Всем</option>
+                        {{#each crew}}
+                            <option value="{{userId}}">{{lname}} {{fname}}</option>
+                        {{/each}}
+                    </select>
+                </td>
+                <td colspan="2">Предел актуальности заявки:&nbsp;<input type="text" id="datetimepicker"
+                                                                        class="floatRight" placeholder="Выполнить до">
+                </td>
 
-        Заявленная неисправность: <input type="text" placeholder="Заявленная неисправность" id="issue"/><br/>
-        Назначено:
-        <select id="selector">
-            <option value="Всем">Всем</option>
-            {{#each crew}}
-                <option value="{{userId}}">{{lname}} {{fname}}</option>
-            {{/each}}
-        </select>
-
-        <select class="district-select">
-                <option value="" selected disabled>Выбирете район</option>
-            {{#each districts}}
-                <option value="{{_id}}">{{district}}</option>
-            {{/each}}
-        </select>
-        <select id="addressor" {{isDisabled}}>
-                <option value="" selected disabled>Выбирете улицу</option>
-            {{#each address.streets}}
-                <option value="{{this}}">{{this}}</option>
-            {{/each}}
-        </select>
-        Дата назначения: <input type="text" id="datetimepicker" placeholder="Дата назначения"><br/>
-        <textarea name="input" id="input"></textarea><br/>
-        <input type="submit" value="Создать заявку"/>
+            </tr>
+            <tr>
+                <td>Адрес:</td>
+                <td colspan="3">
+                    <select class="district-select">
+                        <option value="" selected disabled>Выбирете район</option>
+                        {{#each districts}}
+                            <option value="{{_id}}">{{district}}</option>
+                        {{/each}}
+                    </select>
+                    <select id="addressor" {{isDisabled}}>
+                        <option value="" selected disabled>Выбирете улицу</option>
+                        {{#each address.streets}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    <input type="text" class="house-number"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <textarea name="input" id="input"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td><input type="submit" class="issueSubmit" value="Создать заявку"/></td>
+            </tr>
+        </table>
     </form>
 </template>

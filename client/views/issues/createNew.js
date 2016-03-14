@@ -3,8 +3,8 @@ Template.createNew.onCreated(function () {
     this.subscribe('crew');
     this.subscribe('address');
     self.selectedDistrict = new ReactiveVar();
-    self.autorun(function(){
-        if(self.selectedDistrict.get()){
+    self.autorun(function () {
+        if (self.selectedDistrict.get()) {
             self.subscribe('addressByDistrict', self.selectedDistrict.get());
         }
     })
@@ -15,7 +15,7 @@ Template.createNew.onRendered(function () {
         onChangeDateTime: timeLogic,
         onShow: timeLogic
     });
-    $.cleditor.defaultOptions.width = 790;
+
     this.$("#input").cleditor();
 
 
@@ -29,24 +29,35 @@ Template.createNew.helpers({
     isDisabled: function () {
         return Template.instance().selectedDistrict.get() ? "" : "disabled"
     }
-     /*,
-    districts: function() {
-        return Address.find({});
-    } */
+    /*,
+     districts: function() {
+     return Address.find({});
+     } */
 })
 
 Template.createNew.events({
     "submit #createIssue": function (e) {
         var newTitle = $("#issue").val();
-        var newMessage = $("#input").val();
+        var pnumber = $("#pnumber").val();
         if (!newTitle) {
             toastr.error('Поле &laquo;Заявленная неисправность&raquo; не может быть пустым', 'Ошибка');
+            return false
+        }
+        if (!pnumber) {
+            toastr.error('Поле &laquo;Номер телефона&raquo; не может быть пустым', 'Ошибка');
+            return false
+        }
+
+        if (pnumber.length != 10) {
+            toastr.error('Номер мобильного телефона должен содержать 10 цифр', 'Ошибка');
             return false
         }
 
         Issues.insert({
                 performer: $("#selector").val(),
-                address: $("#addressor").val(),
+                address: $("#addressor").val(),                     // street
+                hnumber: $(".house-number").val(),                  // house number
+                pnumber: $("#pnumber").val(),                       // phone number
                 title: $("#issue").val(),                           // title
                 message: $("#input").val(),                         // message
                 createdAt: new Date,                                // creation timestamp
@@ -60,7 +71,7 @@ Template.createNew.events({
         );
         e.preventDefault();
     },
-    "change .district-select": function(e,t){
+    "change .district-select": function (e, t) {
         console.log($(e.currentTarget).val())
         t.selectedDistrict.set($(e.currentTarget).val());
     }

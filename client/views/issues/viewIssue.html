@@ -1,24 +1,56 @@
 <template name="viewIssue">
-
     {{#if Template.subscriptionsReady}}
         <h2>{{data.title}}</h2>
         {{#unless issueActive}}
             <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
         {{/unless}}
-        <p>Адрес назначения: {{address}}<br/>Создатель заявки: {{creator}}
-            <br/>Назначено: {{performer}} {{data.assignDate}}</p>
+        <form id="createIssue">
+            <table id="newIssue">
+                <tr>
+                    <td>Номер телефона:</td>
+                    <td colspan="3">+7{{{data.pnumber}}}</td>
+                </tr>
+                <tr>
+                    <td>Заявленная неисправность:</td>
+                    <td colspan="3">{{{data.title}}}</td>
+                </tr>
+                <tr>
+                    <td>Назначено:</td>
+                    <td>
+                        {{{data.performer}}}
+                    </td>
+                    <td colspan="2">Предел актуальности заявки:&nbsp;{{data.assignDate}}
+                    </td>
 
-        <p>{{{data.message}}}</p>
+                </tr>
+                <tr>
+                    <td>Адрес:</td>
+                    <td colspan="3">
+                        {{{data.address}}},&nbsp;{{{data.hnumber}}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <textarea name="input" id="input" class="cleditorDisabled">{{{data.message}}}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    {{#if isAdmin}}
+                        {{#if issueActive}}
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue"
+                                                   value="Редактировать заявку"/></td>
 
-        <div class="seperator">
-            {{#if issueActive}}
-                <input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/>
-                <input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/>
-            {{else}}
-                <input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>
-            {{/if}}
-
-        </div>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue"
+                                                   value="Закрыть заявку"/></td>
+                        {{else}}
+                            <td colspan="3"></td>
+                            <td><input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>
+                            </td>
+                        {{/if}}
+                    {{/if}}
+                </tr>
+            </table>
+        </form>
     {{else}}
         {{> loading}}
     {{/if}}

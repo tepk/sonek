@@ -10,9 +10,11 @@ Template.editIssue.onRendered(function () {
         onChangeDateTime: timeLogic,
         onShow: timeLogic
     });
-
-
+    Meteor.setTimeout(function () {
+        $("#input").cleditor()
+    }, 100);
 })
+
 
 Template.editIssue.helpers({
     data: function () {
@@ -20,13 +22,15 @@ Template.editIssue.helpers({
 
     },
     isSelected: function (userId) {
+
         var currIssue = Issues.findOne(
             {
                 _id: Template.parentData(1)._id
             }
         )
 
-        var worker = (Meteor.users.findOne(
+
+        var worker = (Crew.findOne(
             {
                 _id: Issues.findOne(
                     {
@@ -34,7 +38,11 @@ Template.editIssue.helpers({
                     }
                 ).performer
             }
-        ))._id
+        )).fetch()
+        console.log(worker)
+        /* if (worker) {
+         var worker = (worker._id)
+         } */
 
         if (worker === this.userId) {
             return "selected"

@@ -1,19 +1,59 @@
 <template name="editIssue">
     {{#if Template.subscriptionsReady}}
     <h1>Редактирование заявки</h1>
+        <form id="createIssue">
+            <table id="newIssue">
+                <tr>
+                    <td>Номер телефона (10 цифр):</td>
+                    <td colspan="3"><i>+7&nbsp;</i>{{pnumber}}<input type="number" placeholder="1234567890" value="{{pnumber}}" id="pnumber"/></td>
+                </tr>
+                <tr>
+                    <td>Заявленная неисправность:</td>
+                    <td colspan="3"><input type="text" placeholder="Кратко, что именно случилось"
+                                           value="{{data.title}}" id="issue"/></td>
+                </tr>
+                <tr>
+                    <td>Назначено:</td>
+                    <td>
+                        <select id="selector">
+                            <option value="Всем">Всем</option>
+                            {{#each crew}}
+                                <option {{isSelected userId}} class="{{userId}}" value="{{userId}}">{{lname}} {{fname}}</option>
+                            {{/each}}
+                        </select>
+                    </td>
+                    <td colspan="2">Предел актуальности заявки:&nbsp;<input type="text" id="datetimepicker" class="floatRight" value="{{data.assignDate}}" placeholder="Выполнить до">
+                    </td>
 
-    <form id="editIssue" class="{{data._id}}">
-        Заявленная неисправность: <input type="text" value="{{data.title}}" id="issue"/><br/>
-        Назначено:
-        <select id="selector">
-            <option value="Всем">Всем</option>
-            {{#each crew}}
-                <option {{isSelected userId}} class="{{userId}}" value="{{userId}}">{{lname}} {{fname}}</option>
-            {{/each}}
-        </select>
-        Дата назначения: <input type="text" id="datetimepicker" value="{{data.assignDate}}"><br/>
-        {{> cleditor value=data.message id="input"}}<br/>
-        <input type="submit" value="Редактировать заявку"/>
-    </form>
+                </tr>
+                <tr>
+                    <td>Адрес:</td>
+                    <td colspan="3">
+                        <select class="district-select">
+                            <option value="" selected disabled>Выбирете район</option>
+                            {{#each districts}}
+                                <option value="{{_id}}">{{district}}</option>
+                            {{/each}}
+                        </select>
+                        <select id="addressor" {{isDisabled}}>
+                            <option value="" selected disabled>Выбирете улицу</option>
+                            {{#each address.streets}}
+                                <option value="{{this}}">{{this}}</option>
+                            {{/each}}
+                        </select>
+                        <input type="text" class="house-number" value="{{data.hnumber}}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <textarea name="input" id="input" value="{{data.input}}"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td><input type="submit" class="issueSubmit" value="Создать заявку"/></td>
+                </tr>
+            </table>
+        </form>
     {{/if}}
 </template>

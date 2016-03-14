@@ -6,12 +6,17 @@ Template.viewIssue.onCreated(function () {
 
 Template.viewIssue.onRendered(function () {
 
+    Meteor.setTimeout(function(){$("#input").cleditor()}, 100);
 })
 
 Template.viewIssue.helpers({
     data: function () {
         return Issues.findOne(this._id);
 
+    },
+    isAdmin: function () {
+        console.log(Meteor.userId())
+        return Crew.findOne({userId: Meteor.userId()}).isAdmin;
     },
 
     issueActive: function () {

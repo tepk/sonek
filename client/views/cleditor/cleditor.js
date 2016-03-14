@@ -3,8 +3,9 @@ Template.cleditor.onCreated(function () {
 })
 
 Template.cleditor.onRendered(function () {
-    $.cleditor.defaultOptions.width = 790;
+    $.cleditor.defaultOptions.width = auto;
     this.$("#input").cleditor();
+
 })
 
 Template.cleditor.helpers({
