@@ -28,6 +28,6 @@ Template.list.events({
         console.log(this.checked)
     },
     "click .logOut": function () {
-        Accounts.logout()
+        Meteor.logout()
     }
 })
