@@ -6,23 +6,23 @@
     </div>
     <table id="issueList">
         <tr class="header">
-            <td>Дата создания</td>
-            <td>Дата назначения</td>
-            <td>Назначено</td>
-            <td>Краткое описание</td>
+            <th class="performer">Назначено</th>
+            <th class="createdAt">Дата создания</th>
+            <th class="assignDate">Срок актуальности заявки</th>
+            <th class="issueTitle">Краткое описание</th>
         </tr>
         {{#each issues}}
             <tr>
-                <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{createdAt}}</a></td>
-                <td>{{assignDate}}</td>
                 <td>{{performer}}</td>
-                <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{title}}</a></td>
+                <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{parseDate createdAt}}</a></td>
+                <td>{{parseDate assignDate}}</td>
+
+                <td class="issueTitle"><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{title}}</a></td>
             </tr>
         {{/each}}
     </table>
     <div class="separator">
-        <span class="hide"><input type="checkbox" class="hideComplete" checked="checked" />Спрятать закрытые
-            заявки</span>
+        <span class="hide"><input type="checkbox" class="hideComplete" checked="checked" />Спрятать закрытые заявки</span>
     </div>
     {{else}}
         {{> loading}}

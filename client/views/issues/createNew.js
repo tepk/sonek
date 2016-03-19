@@ -23,6 +23,7 @@ Template.createNew.onRendered(function () {
 
 Template.createNew.helpers({
     address: function () {
+        console.log(Address.findOne({_id: Template.instance().selectedDistrict.get()}))
         return Address.findOne({_id: Template.instance().selectedDistrict.get()});
     },
 
@@ -55,14 +56,15 @@ Template.createNew.events({
 
         Issues.insert({
                 performer: $("#selector").val(),
+                districtId: $(".district-select").val(),            // district id
                 address: $("#addressor").val(),                     // street
                 hnumber: $(".house-number").val(),                  // house number
                 pnumber: $("#pnumber").val(),                       // phone number
                 title: $("#issue").val(),                           // title
                 message: $("#input").val(),                         // message
-                createdAt: new Date,                                // creation timestamp
+                createdAt: new Date().getTime(),                    // creation timestamp
                 issueActive: true,                                  // check, if issue closed
-                assignDate: $("#datetimepicker").val(),             // assign date and time
+                assignDate: new Date($("#datetimepicker").val()),   // assign date and time
                 createdBy: Meteor.userId(),                         // creator of an issue
             },
             function (err, id) {

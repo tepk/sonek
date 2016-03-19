@@ -4,7 +4,7 @@ html {
 
 body {
   height: 100%;
-  margin: 0;
+  margin: 0px 0px 0px 20px;
   font-size: 0.8rem;
 }
 
@@ -64,6 +64,7 @@ h1 a:hover {
 }
 
 #menu {
+  margin-left: -20px;
   line-height: 50px;
   height: 50px;
   background: #c1c1c7;
@@ -83,6 +84,7 @@ h1 a:hover {
 
 #logo {
   text-decoration: none;
+  margin-left: 10px;
 }
 
 #logo:hover {
@@ -106,8 +108,9 @@ h1 a:hover {
   font-size: 0.9rem;
 }
 
-#issueList tr {
-
+#issueList th {
+  font-weight: normal;
+  border: 1px solid #a7a7a7;
 }
 
 #issueList td {
@@ -189,6 +192,10 @@ h1 a:hover {
   margin-right: 10px;
 }
 
+.floatLeft {
+  float: left;
+}
+
 .hide {
   float: right;
   color: #201d88;
@@ -220,6 +227,12 @@ h1 a:hover {
 .logOut {
 
 }
+/* this is a LIST table */
+.performer {width: 12rem;}
+.createdAt {width: 9rem;}
+.assignDate {width: 9rem;}
+.issueTitle {text-align: right;}
+
 
 /* this is sticky-footer */
 .page-wrap {
@@ -232,6 +245,7 @@ h1 a:hover {
   display: block;
 }
 .site-footer, .page-wrap:after {
+  margin-left: -20px;
   height: 90px;
   color: #201d88;
   font-size: 0.7rem !important;

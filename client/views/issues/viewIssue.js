@@ -5,8 +5,7 @@ Template.viewIssue.onCreated(function () {
 })
 
 Template.viewIssue.onRendered(function () {
-
-    Meteor.setTimeout(function(){$("#input").cleditor()}, 100);
+    Meteor.setTimeout(function(){$("#input").cleditor()}, 500);
 })
 
 Template.viewIssue.helpers({

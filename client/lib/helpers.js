@@ -3,6 +3,9 @@ Template.registerHelper("crew", function () {
 })
 
 Template.registerHelper("districts", function () {
-    console.log(Address.find())
     return Address.find();
+})
+
+Template.registerHelper("parseDate", function(date) {
+    return moment(date).format("YYYY-MM-DD HH:mm");
 })
