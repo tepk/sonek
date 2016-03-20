@@ -13,6 +13,20 @@ Template.list.helpers({
         return Issues.find({}, {sort: {assignDate: 1}});
     },
 
+    issueActive: function () {
+
+        var currIssue = Issues.findOne({_id: this._id})
+        if (currIssue) {
+
+            if (currIssue.issueActive) {
+                return "active"
+            } else {
+                return "inactive"
+            }
+        }
+    },
+
+
     performer: function () {
         var crew = Crew.findOne({userId: this.performer});
         if (crew) {
@@ -24,8 +38,8 @@ Template.list.helpers({
 })
 
 Template.list.events({
-    "click .hideComplete": function () {
-        console.log(this.checked)
+    "click #hideComplete": function () {
+
     },
     "click .logOut": function () {
         Meteor.logout()

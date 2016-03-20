@@ -29,7 +29,7 @@ Template.closeIssue.events({
         });
         return false;
     },
-    "click #delIssue": function (e) {
+    "click #closeIssue": function (e) {
         if (confirm('Вы действительно хотите удалить заявку? Это действие нельзя отменить')) {
             Issues.remove({_id: this._id})
         } else {

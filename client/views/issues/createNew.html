@@ -16,9 +16,11 @@
                 <td>
                     <select id="selector">
                         <option value="Всем">Всем</option>
+                        {{#if isAdmin}}
                         {{#each crew}}
                             <option value="{{userId}}">{{lname}} {{fname}}</option>
                         {{/each}}
+                        {{/if}}
                     </select>
                 </td>
                 <td colspan="2">Предел актуальности заявки:&nbsp;<input type="text" id="datetimepicker" class="floatRight" placeholder="Выполнить до">

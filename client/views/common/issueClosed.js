@@ -10,9 +10,12 @@ Template.issueClosed.helpers({
     issueClosed: function () {
         var currIssue = Issues.findOne(this._id)
         if (currIssue) {
-            return "Заявка закрыта. Выберите дайствие:"
+            var closeComment = currIssue.closeComment
+            console.log(this)
+            return "Заявка закрыта. Выберите действие:"
         } else {
-            return "Заявка удалена, либо не существует"
+            Router.go('/')
+            return false
         }
     }
 })

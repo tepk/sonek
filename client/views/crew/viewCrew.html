@@ -1,0 +1,8 @@
+<template name="viewCrew">
+    <h1>Список зарегистрированных пользователей</h1>
+	<ul id="crewList">
+        {{#each recentCrew}}
+            <li id="{{_id}}" class="{{estpGroup}}">{{lname}}&nbsp;{{fname}}</li>
+        {{/each}}
+    </ul>
+</template>

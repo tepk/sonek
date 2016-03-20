@@ -27,6 +27,8 @@ Template.viewIssue.helpers({
         });
         if (crew) {
             return crew.lname + " " + crew.fname;
+        } else {
+            return "всем"
         }
     },
     creator: function () {

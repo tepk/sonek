@@ -32,6 +32,7 @@ Template.createCrew.events({
                     fname: $("#fname").val(),                    //first name
                     sname: $("#sname").val(),                    //second name
                     lname: $("#lname").val(),                    //last name
+                    group: $("#group").val(),                    //user group
                     isAdmin: false
                 }
             },

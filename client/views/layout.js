@@ -12,10 +12,6 @@ Template.layout.helpers({
         if (fio) {
             return fio.lname + " " + fio.fname;
         }
-    },
-    isAdmin: function () {
-        console.log(Crew.findOne({userId: Meteor.userId()}).isAdmin)
-        return Crew.findOne({userId: Meteor.userId()}).isAdmin
     }
 })
 

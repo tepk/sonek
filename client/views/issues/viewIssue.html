@@ -8,7 +8,11 @@
             <table id="newIssue">
                 <tr>
                     <td>Номер телефона:</td>
-                    <td colspan="3">+7{{{data.pnumber}}}</td>
+                    {{#if issueActive}}
+                        <td colspan="3">+7{{{data.pnumber}}}</td>
+                    {{else}}
+                        <td colspan="3"><i>Заявка закрыта, контактные данные скрыты</i></td>
+                    {{/if}}
                 </tr>
                 <tr>
                     <td>Заявленная неисправность:</td>
@@ -19,9 +23,11 @@
                     <td>
                         {{{performer}}}
                     </td>
-                    <td colspan="2">Предел актуальности заявки:&nbsp;{{parseDate data.assignDate}}
-                    </td>
-
+                    {{#if issueActive}}
+                        <td colspan="2">Предел актуальности заявки:&nbsp;{{parseDate data.assignDate}}</td>
+                    {{else}}
+                        <td colspan="2"><i>Заявка не актуальна</i></td>
+                    {{/if}}
                 </tr>
                 <tr>
                     <td>Адрес:</td>
@@ -37,9 +43,11 @@
                 <tr>
                     {{#if isAdmin}}
                         {{#if issueActive}}
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue"
+                                                   value="Редактировать заявку"/></td>
 
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue"
+                                                   value="Закрыть заявку"/></td>
                         {{else}}
                             <td colspan="3"></td>
                             <td><input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>

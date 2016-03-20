@@ -8,6 +8,12 @@
         <input type="text" placeholder="Желаемый логин" id="username"/>&nbsp;
         <input type="password" placeholder="Пароль" id="setPassword"/>&nbsp;
         <input type="password" placeholder="Повторите пароль" id="checkPassword"/><br />
+        {{#if isAdmin}}
+            <select id="group">
+                <option value="estpGroup">ESTP Group</option>
+                <option value="otherGroup">other Group</option>
+            </select>
+        {{/if}}
         <input type="submit" value="Добавить пользователя"/>
     </form>
 </template>

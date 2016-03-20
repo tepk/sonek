@@ -12,9 +12,11 @@
                 <span class="floatRight">
                     {{loggedIn}} (<a href="{{pathFor route='list'}}" class="logOut">выход</a>)
                 </span>
+                <span class="floatRight"><a href="{{pathFor route='viewCrew'}}">Список зарегистрированных пользователей</a></span>
                 {{#if isAdmin}}
                     <span class="floatRight"><a href="{{pathFor route='createCrew'}}">Добавить пользователя</a></span>
                 {{/if}}
+
                 <a href="/" id="logo"><img src="/images/logo.png"/></a>
             </div>
             {{> yield}}

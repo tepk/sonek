@@ -6,6 +6,7 @@ Router.configure({
 Router.route('/', {name: 'list'});
 Router.route('/createNew', {name: 'createNew'});
 Router.route('/createCrew', {name: 'createCrew'});
+Router.route('/viewCrew', {name: 'viewCrew'});
 
 Router.route('/viewIssue/:_id', function () {
     var params = this.params;
