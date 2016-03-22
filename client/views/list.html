@@ -21,7 +21,9 @@
             {{/each}}
         </table>
         <div class="separator">
-            <span class="checkHide"><input type="checkbox" id="hideComplete" checked="checked"/>Спрятать закрытые заявки</span>
+            <form>
+                <span id="hideCompleted" class="checkHide"><input type="checkbox" checked="{{hideCompleted}}"/>Спрятать закрытые заявки</span>
+            </form>
         </div>
     {{else}}
         {{> loading}}

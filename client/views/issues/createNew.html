@@ -5,11 +5,21 @@
         <table id="newIssue">
             <tr>
                 <td>Номер телефона (10 цифр):</td>
-                <td colspan="3"><i>+7&nbsp;</i><input type="number" placeholder="1234567890" id="pnumber"/></td>
+                <td colspan="3">
+                    {{#if isAdmin}}
+                        <i>+7&nbsp;</i><input type="number" placeholder="1234567890" id="pnumber" value="1234567890"/>
+                    {{else}}
+                        <i>+7&nbsp;</i><input type="number" placeholder="1234567890" id="pnumber"/>
+                    {{/if}}
+                </td>
             </tr>
             <tr>
                 <td>Заявленная неисправность:</td>
-                <td colspan="3"><input type="text" placeholder="Кратко, что именно случилось" id="issue"/></td>
+                {{#if isAdmin}}
+                    <td colspan="3"><input type="text" placeholder="Кратко, что именно случилось" id="issue" value="Тестовая заявка"/></td>
+                {{else}}
+                    <td colspan="3"><input type="text" placeholder="Кратко, что именно случилось" id="issue"/></td>
+                {{/if}}
             </tr>
             <tr>
                 <td>Назначено:</td>
@@ -17,13 +27,14 @@
                     <select id="selector">
                         <option value="Всем">Всем</option>
                         {{#if isAdmin}}
-                        {{#each crew}}
-                            <option value="{{userId}}">{{lname}} {{fname}}</option>
-                        {{/each}}
+                            {{#each crew}}
+                                <option value="{{userId}}">{{lname}} {{fname}}</option>
+                            {{/each}}
                         {{/if}}
                     </select>
                 </td>
-                <td colspan="2">Предел актуальности заявки:&nbsp;<input type="text" id="datetimepicker" class="floatRight" placeholder="Выполнить до">
+                <td colspan="2">Предел актуальности заявки:&nbsp;<input type="text" id="datetimepicker"
+                                                                        class="floatRight" placeholder="Выполнить до">
                 </td>
 
             </tr>
