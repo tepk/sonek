@@ -26,14 +26,18 @@ Template.createNew.helpers({
         console.log(Address.findOne({_id: Template.instance().selectedDistrict.get()}))
         return Address.findOne({_id: Template.instance().selectedDistrict.get()});
     },
+    defAssignDate: function() {
+        var step = 172800000
+        var now = new Date().getTime()
+        var defaultAssign = moment(now + step).format("YYYY-MM-DD, HH:mm");
+        console.log(defaultAssign)
+        return defaultAssign
+    },
 
     isDisabled: function () {
         return Template.instance().selectedDistrict.get() ? "" : "disabled"
     }
-    /*,
-     districts: function() {
-     return Address.find({});
-     } */
+
 })
 
 Template.createNew.events({

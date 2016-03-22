@@ -1,11 +1,14 @@
 Template.viewIssue.onCreated(function () {
+
     this.subscribe('recent_issues', this.data._id);
     this.subscribe('crew');
     this.subscribe('address');
+    this.cleditor
 })
 
 Template.viewIssue.onRendered(function () {
-    Meteor.setTimeout(function(){$("#input").cleditor()}, 500);
+    var self = this
+    Meteor.setTimeout(function(){window.asd = $("#input").cleditor()}, 500);
 })
 
 Template.viewIssue.helpers({

@@ -2,6 +2,7 @@ Template.list.onCreated(function () {
     var self = this;
     this.subscribe('recent_issues');
     this.subscribe('crew');
+    this.subscribe('address');
 
 })
 
@@ -25,6 +26,7 @@ Template.list.helpers({
 
     issueActive: function () {
         var currIssue = Issues.findOne({_id: this._id})
+        var today = new Date().getTime()
         if (currIssue) {
 
             if (currIssue.issueActive) {
@@ -35,7 +37,15 @@ Template.list.helpers({
         }
     },
 
+    districtName: function() {
+        var districtId = Address.findOne({_id: this.districtId});
+        if (districtId) {
+            return districtId.district
+        } else {
+            return "n/a"
+        }
 
+    },
     performer: function () {
         var crew = Crew.findOne({userId: this.performer});
         if (crew) {

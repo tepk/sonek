@@ -1,6 +1,8 @@
 <template name="viewIssue">
     {{#if Template.subscriptionsReady}}
-        <h2>{{data.title}}</h2>
+        <h2>Просмотр текущей заявки</h2>
+
+        <h3>{{data.title}}</h3>
         {{#unless issueActive}}
             <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
         {{/unless}}

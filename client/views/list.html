@@ -1,14 +1,13 @@
 <template name="list">
     <h2>Открытые заявки</h2>
     {{#if Template.subscriptionsReady}}
-        <div class="separator">
-            <span class="floatRight"><a href="{{pathFor route='createNew'}}">Создать заявку</a></span>
-        </div>
+
         <table id="issueList">
             <tr class="header">
                 <th class="performer">Назначено</th>
                 <th class="createdAt">Дата создания</th>
-                <th class="assignDate">Срок актуальности заявки</th>
+                <th class="assignDate">Срок актуальности заявки<sup>[<a href="#" alt="Дата и время, после которой текущая заявка пропадет из выборки">?</a>]</sup></th>
+                <th class="districtName">Район</th>
                 <th class="issueTitle">Краткое описание</th>
             </tr>
             {{#each issues}}
@@ -16,6 +15,7 @@
                     <td>{{performer}}</td>
                     <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{parseDate createdAt}}</a></td>
                     <td>{{parseDate assignDate}}</td>
+                    <td>{{districtName}}</td>
                     <td class="issueTitle"><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{title}}</a></td>
                 </tr>
             {{/each}}
