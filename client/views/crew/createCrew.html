@@ -1,19 +1,42 @@
 <template name="createCrew">
-    <h1>Меню редактирования профайла сотрудников.</h1>
+    <h1>Меню регистрации пользователей</h1>
 
     <form id="createCrew">
-        <input type="text" placeholder="Фамилия" id="lname"/>&nbsp;
-        <input type="text" placeholder="Имя" id="fname"/>&nbsp;
-        <input type="text" placeholder="Отчество" id="sname"/><br/>
-        <input type="text" placeholder="Желаемый логин" id="username"/>&nbsp;
-        <input type="password" placeholder="Пароль" id="setPassword"/>&nbsp;
-        <input type="password" placeholder="Повторите пароль" id="checkPassword"/><br />
-        {{#if isAdmin}}
-            <select id="group">
-                <option value="estpGroup">ESTP Group</option>
-                <option value="otherGroup">other Group</option>
-            </select>
-        {{/if}}
-        <input type="submit" value="Добавить пользователя"/>
+        <table id="createIssue">
+            <tr>
+                <td>Фамилия</td>
+                <td><input type="text" placeholder="Иванов" id="lname" tabindex="1"/></td>
+                <td>Номер телефона<sup>[<a href="#" title="10 цифр. Будет использоваться как логин для входа в систему">?</a>]</sup></td>
+                <td>+7&nbsp;<input type="number" class="floatRight" placeholder="1234567890"  id="username" tabindex="4"/></td>
+            </tr>
+            <tr>
+                <td>Имя</td>
+                <td><input type="text" placeholder="Василий" id="fname" tabindex="2"/></td>
+                <td>Пароль</td>
+                <td><input type="password" class="floatRight" placeholder="Пароль" id="setPassword" tabindex="5"/></td>
+            </tr>
+            <tr>
+                <td>Отчество</td>
+                <td><input type="text" placeholder="Петрович" id="sname" tabindex="3"/></td>
+                <td>Повторите пароль</td>
+                <td><input type="password" class="floatRight" placeholder="Повторите пароль" id="checkPassword" tabindex="6"/></td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <select id="group" tabindex="7">
+                        {{#if isAdmin}}
+                            <option value="estpGroup">ESTP Group</option>
+                        {{/if}}
+                        <option value="otherGroup">Без группы</option>
+                    </select>
+                </td>
+                <td colspan="2">
+                    <input type="submit" id="registerProfile" value="Зарегистрировать пользователя" tabindex="8"/>
+                </td>
+            </tr>
+        </table>
     </form>
 </template>

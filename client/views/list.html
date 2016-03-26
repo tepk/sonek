@@ -1,17 +1,24 @@
 <template name="list">
-    <h2>Открытые заявки</h2>
-    {{#if Template.subscriptionsReady}}
+    <h2>Зарегистрированные заявки</h2>
+
 
         <table id="issueList">
             <tr class="header">
                 <th class="performer">Назначено</th>
                 <th class="createdAt">Дата создания</th>
-                <th class="assignDate">Срок актуальности заявки<sup>[<a href="#" alt="Дата и время, после которой текущая заявка пропадет из выборки">?</a>]</sup></th>
-                <th class="districtName">Район</th>
+                <th class="assignDate">Срок актуальности заявки<sup>[<a href="#" title="Дата и время, после которой текущая заявка пропадет из выборки">?</a>]</sup></th>
+                <th class="districtName">Район:
+                    <select class="district-select">
+                        <option value="">Все районы</option>
+                        {{#each districts}}
+                            <option value="{{_id}}">{{district}}</option>
+                        {{/each}}
+                    </select>
+                </th>
                 <th class="issueTitle">Краткое описание</th>
             </tr>
             {{#each issues}}
-                <tr id="{{issueActive}}">
+                <tr id="{{issueActive}}" class="{{fireIssue}}">
                     <td>{{performer}}</td>
                     <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{parseDate createdAt}}</a></td>
                     <td>{{parseDate assignDate}}</td>
@@ -22,10 +29,9 @@
         </table>
         <div class="separator">
             <form>
-                <span id="hideCompleted" class="checkHide"><input type="checkbox" checked="{{hideCompleted}}"/>Спрятать закрытые заявки</span>
+                <span id="hideCompleted" class="checkHide"><input type="checkbox" checked="{{hideCompleted}}"/>Спрятать неактуальные заявки</span>
             </form>
         </div>
-    {{else}}
-        {{> loading}}
-    {{/if}}
+
+
 </template>

@@ -1,0 +1,23 @@
+<template name="editProfile">
+    <h2>Меню редактирования профайла пользователя</h2>
+    <h4><nobr>{{profile.lname}} {{profile.fname}} {{profile.sname}}</nobr></h4>
+    <form id="editProfile">
+        <div style="float: left">{{> image image=profile.avatar transformation="avatar"}}<div id="uploadImage"></div></div>
+        <table id="currentProfile">
+            <tr>
+                <td><input type="text" class="lname" value="{{profile.lname}}" /></td>
+                <td><input type="text" class="fname" value="{{profile.fname}}" /></td>
+                <td><input type="text" class="sname" value="{{profile.sname}}" /></td>
+
+            </tr>
+            <tr>
+                <td><input type="text" value="brthday" id="datetimepicker"/></td>
+                <td><input type="text" value="cstmrday" /></td>
+                <td><input type="text" value="{{rgstrday}}" disabled /></td>
+            </tr>
+            <tr></tr>
+        </table>
+
+    </form>
+    <div id="separator" style="display: block;">&nbsp;</div>
+</template>

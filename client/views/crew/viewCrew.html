@@ -2,7 +2,7 @@
     <h1>Список зарегистрированных пользователей</h1>
 	<ul id="crewList">
         {{#each recentCrew}}
-            <li id="{{_id}}" class="{{estpGroup}}">{{lname}}&nbsp;{{fname}}</li>
+            <li id="{{_id}}" class="{{estpGroup}}"><a href="{{pathFor route="viewProfile"}}">{{lname}}&nbsp;{{fname}}</a></li>
         {{/each}}
     </ul>
 </template>

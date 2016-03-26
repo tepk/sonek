@@ -1,8 +1,12 @@
 Template.list.onCreated(function () {
     var self = this;
-    this.subscribe('recent_issues');
+    /* this.subscribe('recent_issues'); */
     this.subscribe('crew');
     this.subscribe('address');
+    self.selectedDistrict = new ReactiveVar();
+    self.autorun(function () {
+        self.subscribe('recent_issues', self.selectedDistrict.get());
+    })
 
 })
 
@@ -13,10 +17,23 @@ Template.list.onRendered(function () {
 Template.list.helpers({
     issues: function () {
         if (Session.get("hideCompleted")) {
-            console.log(Issues.find({issueActive: true}, {sort: {assignDate: 1}}).fetch())
-            return Issues.find({issueActive: true}, {sort: {assignDate: 1}});
+
+            var currDay = new Date()
+
+            return Issues.find({issueActive: true, assignDate: {$gt: currDay}}, {sort: {assignDate: 1}});
         } else {
             return Issues.find({}, {sort: {assignDate: 1}});
+        }
+    },
+
+    fireIssue: function() {
+        var issue = Issues.findOne(this._id);
+        if (issue) {
+            var currAssignDate = issue.assignDate.getTime()
+            var currTime = Session.get("reactiveTime")
+            if ((currAssignDate - currTime) <= 7200000) {
+                return "fire"
+            }
         }
     },
 
@@ -37,7 +54,7 @@ Template.list.helpers({
         }
     },
 
-    districtName: function() {
+    districtName: function () {
         var districtId = Address.findOne({_id: this.districtId});
         if (districtId) {
             return districtId.district
@@ -57,11 +74,14 @@ Template.list.helpers({
 })
 
 Template.list.events({
-    "change #hideCompleted input":
-        function (event) {
-            Session.set("hideCompleted", event.target.checked);
-        },
+    "change #hideCompleted input": function (event) {
+        Session.set("hideCompleted", event.target.checked);
+    },
     "click .logOut": function () {
         Meteor.logout()
+    },
+    "change .district-select": function (e, t) {
+        console.log($(e.currentTarget).val())
+        t.selectedDistrict.set($(e.currentTarget).val());
     }
 })

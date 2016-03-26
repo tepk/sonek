@@ -1,8 +1,8 @@
 <template name="viewIssue">
     {{#if Template.subscriptionsReady}}
-        <h2>Просмотр текущей заявки</h2>
+        <h2>Просмотр текущей заявки &laquo;{{data.title}}&raquo;&nbsp;от&nbsp;{{created}}</h2>
 
-        <h3>{{data.title}}</h3>
+
         {{#unless issueActive}}
             <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
         {{/unless}}
@@ -11,7 +11,13 @@
                 <tr>
                     <td>Номер телефона:</td>
                     {{#if issueActive}}
-                        <td colspan="3">+7{{{data.pnumber}}}</td>
+                        <td colspan="3">
+                            {{#unless phoneNumber}}
+                                <input type="button" id="showPhoneNumber" value="Показать номер телефона"/>
+                            {{else}}
+                                +7{{phoneNumber}}
+                            {{/unless}}
+                        </td>
                     {{else}}
                         <td colspan="3"><i>Заявка закрыта, контактные данные скрыты</i></td>
                     {{/if}}
@@ -39,17 +45,15 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <textarea name="input" id="input" class="cleditorDisabled">{{{data.message}}}</textarea>
+                        <textarea name="input" id="viewInput" disabled>{{{data.message}}}</textarea>
                     </td>
                 </tr>
                 <tr>
                     {{#if isAdmin}}
                         {{#if issueActive}}
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue"
-                                                   value="Редактировать заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/></td>
 
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue"
-                                                   value="Закрыть заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/></td>
                         {{else}}
                             <td colspan="3"></td>
                             <td><input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>
@@ -59,6 +63,10 @@
                 </tr>
             </table>
         </form>
+        {{#unless issueActive}}
+            <h4>Комментарий, оставленный при закрытии заявки:<br/><span id="closeComment">{{data.closeComment}}</span>
+            </h4>
+        {{/unless}}
     {{else}}
         {{> loading}}
     {{/if}}

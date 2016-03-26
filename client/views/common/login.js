@@ -27,7 +27,7 @@ Template.login.events({
             if (err) {
                 toastr.error('Неверная пара логин/пароль', 'Ошибка');
             }
-            // The user might not have been found, or their passwword
+            // The user might not have been found, or their password
             // could be incorrect. Inform the user that their
             // login attempt has failed.
             else

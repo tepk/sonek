@@ -1,0 +1,1 @@
+Session.set("hideCompleted", true)

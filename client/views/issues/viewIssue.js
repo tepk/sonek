@@ -1,14 +1,17 @@
 Template.viewIssue.onCreated(function () {
-
-    this.subscribe('recent_issues', this.data._id);
+    var self = this;
+    this.subscribe('currentIssue', this.data._id);
     this.subscribe('crew');
     this.subscribe('address');
-    this.cleditor
+    self.phoneNumber = new ReactiveVar();
+
 })
 
 Template.viewIssue.onRendered(function () {
     var self = this
-    Meteor.setTimeout(function(){window.asd = $("#input").cleditor()}, 500);
+    Meteor.setTimeout(function () {
+        window.asd = $("#input").cleditor()
+    }, 500);
 })
 
 Template.viewIssue.helpers({
@@ -17,16 +20,24 @@ Template.viewIssue.helpers({
 
     },
     isAdmin: function () {
-        console.log(Meteor.userId())
-        return Crew.findOne({userId: Meteor.userId()}).isAdmin;
+        var crew = Crew.findOne({userId: Meteor.userId()})
+        if (crew) {
+            return crew.isAdmin;
+        }
     },
 
     issueActive: function () {
-        return Issues.findOne(this._id).issueActive;
+        var issue = Issues.findOne(this._id)
+        if (issue) {
+            return issue.issueActive;
+        }
     },
     performer: function () {
+        var issue = Issues.findOne(this._id)
+        if (!issue)
+            return
         var crew = Crew.findOne({
-            userId: Issues.findOne({_id: this._id}).performer
+            userId: issue.performer
         });
         if (crew) {
             return crew.lname + " " + crew.fname;
@@ -34,15 +45,14 @@ Template.viewIssue.helpers({
             return "всем"
         }
     },
-    creator: function () {
-        var creator = Crew.findOne({
-            userId: Issues.findOne({_id: this._id}).createdBy
-        });
-        if (creator) {
-            return creator.lname + " " + creator.fname;
-
+    created: function () {
+        var issue = Issues.findOne({_id: this._id});
+        if (issue) {
+            return moment(issue.createdAt).format("DD.MM.YYYY")
         }
-
+    },
+    phoneNumber: function () {
+        return Template.instance().phoneNumber.get()
     }
 })
 
@@ -64,5 +74,12 @@ Template.viewIssue.events({
             }
         });
         return false;
+    },
+
+    "click #showPhoneNumber": function (e, t) {
+        Meteor.call('showPhoneNumber', this._id, globalUI.callback(function (result) {
+                t.phoneNumber.set(result)
+            })
+        );
     }
 })

@@ -6,6 +6,7 @@ body {
   height: 100%;
   margin: 0px 0px 0px 20px;
   font-size: 0.8rem;
+  overflow-y: scroll;
 }
 
 * {
@@ -20,7 +21,7 @@ h1 {
 }
 
 h2 {
-  margin-left: -20px;
+
   font-weight: 100;
   font-family: sans-serif;
   font-size: 1.8rem;
@@ -156,6 +157,14 @@ h1 a:hover {
   color: #4b5f4b;
 }
 
+#registerProfile {
+  border: 0;
+  margin-right: 10px;
+  float: right;
+  background-color: #00dd1c;
+  color: #4b5f4b;
+}
+
 #createIssue {
   margin-left: 15%;
 }
@@ -164,10 +173,30 @@ h1 a:hover {
   width: 100%;
 }
 
+#viewInput {
+  min-height: 150px;
+  font-family: "Courier New";
+  width: 99%;
+  font-size: 1.3em;
+  border: none;
+  outline: none;
+  -moz-appearance: none;
+  resize: none;
+
+}
+
 #inactive td {
   background: #c0c0c0;
 }
 
+#closeComment {
+  text-align: center;
+  width: 100%;
+  font-family: "Courier New", monospace;
+}
+
+#showPhoneNumber {
+}
 
 .house-number {
   width: 2.5em;
@@ -205,6 +234,10 @@ h1 a:hover {
   padding-top: 10px;
   margin-right: 10px;
 
+}
+
+.fire {
+  background-color: #ff0000;
 }
 
 .hide {
@@ -246,7 +279,7 @@ h1 a:hover {
 .performer {width: 12rem;}
 .createdAt {width: 9rem;}
 .assignDate {width: 9rem;}
-.districtName {width: 10rem;}
+.districtName {width: 12rem;}
 .issueTitle {}
 
 

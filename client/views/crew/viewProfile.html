@@ -1,0 +1,21 @@
+<template name="viewProfile">
+    <h2>
+        <nobr>{{data.lname}} {{data.fname}} {{data.sname}}, {{isAdmin}}</nobr>
+    </h2>
+    <table id="context">
+        <tr>
+            <td>
+                <ul id="userProfile">
+                    <li>Контактный номер: +7{{data.pnumber}}</li>
+                    <li>Зарегистрирован {{registerDate}}</li>
+                    <li>Возраст: {{age}}</li>
+                    <li>Заявленный стаж работы:</li>
+
+                </ul>
+            </td>
+            <td id="avatar">
+                {{> image image=data.avatar transformation="avatar"}}
+            </td>
+        </tr>
+    </table>
+</template>

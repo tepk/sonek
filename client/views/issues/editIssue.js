@@ -1,13 +1,21 @@
 Template.editIssue.onCreated(function () {
     var self = this;
-
-    this.subscribe('recent_issues', this.data._id);
+    this.subscribe('currentIssue', this.data._id);
     this.subscribe('crew');
     this.subscribe('address');
     self.selectedDistrict = new ReactiveVar();
     self.autorun(function () {
         if (self.selectedDistrict.get()) {
             self.subscribe('addressByDistrict', self.selectedDistrict.get());
+        }
+    })
+    self.pnumber = new ReactiveVar();
+    Meteor.call("showPhoneNumber", this.data._id, function(err, res){
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(res)
+            self.pnumber.set(res)
         }
     })
 
@@ -28,6 +36,7 @@ Template.editIssue.onRendered(function () {
             self.selectedDistrict.set(issue.districtId);
         }
     });
+
 })
 
 
@@ -54,7 +63,6 @@ Template.editIssue.helpers({
     },
 
     streetSelected: function () {
-        console.log(this.toString())
         var pageId = Template.instance().data._id
         if (pageId) {
             var currStreet = Issues.findOne({_id: pageId}).address
@@ -81,6 +89,10 @@ Template.editIssue.helpers({
                     return "selected"
             }
         }
+    },
+
+    currPnumber: function () {
+        return Template.instance().pnumber.get()
     }
 
 
@@ -114,7 +126,6 @@ Template.editIssue.events({
         return false;
     },
     "change .district-select": function (e, t) {
-
         t.selectedDistrict.set($(e.currentTarget).val());
         return false;
     }

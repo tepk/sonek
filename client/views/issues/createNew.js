@@ -3,6 +3,7 @@ Template.createNew.onCreated(function () {
     this.subscribe('crew');
     this.subscribe('address');
     self.selectedDistrict = new ReactiveVar();
+
     self.autorun(function () {
         if (self.selectedDistrict.get()) {
             self.subscribe('addressByDistrict', self.selectedDistrict.get());
@@ -60,16 +61,16 @@ Template.createNew.events({
 
         Issues.insert({
                 performer: $("#selector").val(),
-                districtId: $(".district-select").val(),            // district id
-                address: $("#addressor").val(),                     // street
-                hnumber: $(".house-number").val(),                  // house number
-                pnumber: $("#pnumber").val(),                       // phone number
-                title: $("#issue").val(),                           // title
-                message: $("#input").val(),                         // message
-                createdAt: new Date().getTime(),                    // creation timestamp
-                issueActive: true,                                  // check, if issue closed
-                assignDate: new Date($("#datetimepicker").val()),   // assign date and time
-                createdBy: Meteor.userId(),                         // creator of an issue
+                districtId: $(".district-select").val(),                        // district id
+                address: $("#addressor").val(),                                 // street
+                hnumber: $(".house-number").val(),                              // house number
+                pnumber: $("#pnumber").val(),                                   // phone number
+                title: $("#issue").val(),                                       // title
+                message: $("#input").val(),                                     // message
+                createdAt: new Date(),                                           // creation timestamp
+                issueActive: true,                                              // check, if issue closed
+                assignDate: new Date($("#datetimepicker").val()),               // assign date and time
+                createdBy: Meteor.userId(),                                     // creator of an issue
             },
             function (err, id) {
                 Router.go('/viewIssue/' + id);

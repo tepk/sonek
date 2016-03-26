@@ -19,6 +19,28 @@ Router.route('/viewIssue/:_id', function () {
 
 }, {name: 'viewIssue'});
 
+Router.route('/viewProfile/:_id', function () {
+    var params = this.params;
+    var id = params._id;
+    this.render('viewProfile', {
+        data: function () {
+            return {_id: this.params._id};
+        }
+    });
+
+}, {name: 'viewProfile'});
+
+Router.route('/editProfile/:_id', function () {
+    var params = this.params;
+    var id = params._id;
+    this.render('editProfile', {
+        data: function () {
+            return {_id: this.params._id};
+        }
+    });
+
+}, {name: 'editProfile'});
+
 Router.route('/editIssue/:_id', function () {
     var params = this.params;
     var id = params._id;
