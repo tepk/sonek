@@ -7,10 +7,5 @@ Meteor.methods({
         throw new Meteor.Error("no issue found", "there is no issue/issue._id");
 
 
-    },
-    returnString: function () {
-        var a = ""
-        var b = "some string"
-        return (a + b)
     }
 })

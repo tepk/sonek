@@ -6,6 +6,9 @@
         {{#unless issueActive}}
             <h3>Внимание: заявка закрыта, возможность редактирования отключена.</h3>
         {{/unless}}
+        {{#if fireIssue}}
+            <h3>{{fireIssue}}</h3>
+        {{/if}}
         <form id="createIssue">
             <table id="newIssue">
                 <tr>
@@ -51,9 +54,11 @@
                 <tr>
                     {{#if isAdmin}}
                         {{#if issueActive}}
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue"
+                                                   value="Редактировать заявку"/></td>
 
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue"
+                                                   value="Закрыть заявку"/></td>
                         {{else}}
                             <td colspan="3"></td>
                             <td><input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>

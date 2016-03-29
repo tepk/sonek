@@ -53,7 +53,20 @@ Template.viewIssue.helpers({
     },
     phoneNumber: function () {
         return Template.instance().phoneNumber.get()
-    }
+    },
+    fireIssue: function () {
+        var issue = Issues.findOne(this._id);
+        if (issue) {
+            var currAssignDate = issue.assignDate.getTime()
+            var currTime = Session.get("reactiveTime")
+            if (((currAssignDate - currTime) <= 7200000) && ((currAssignDate - currTime) > 0)) {
+                return "Внимание! Срок актуальности заявки истекает меньше чем через 2 часа!"
+            }
+            if ((currAssignDate - currTime) <= 0) {
+                return "Внимание! Срок актуальности истек. Заявка может быть неактуальной."
+            }
+        }
+    },
 })
 
 Template.viewIssue.events({

@@ -26,13 +26,16 @@ Template.list.helpers({
         }
     },
 
-    fireIssue: function() {
+    fireIssue: function () {
         var issue = Issues.findOne(this._id);
         if (issue) {
             var currAssignDate = issue.assignDate.getTime()
             var currTime = Session.get("reactiveTime")
-            if ((currAssignDate - currTime) <= 7200000) {
+            if (((currAssignDate - currTime) <= 7200000) && ((currAssignDate - currTime) > 0)) {
                 return "fire"
+            }
+            if ((currAssignDate - currTime) <= 0) {
+                return "burn"
             }
         }
     },

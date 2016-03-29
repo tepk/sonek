@@ -1,5 +1,6 @@
 Template.closeIssue.onCreated(function () {
-    this.subscribe('recent_issues', this.data._id);
+    this.subscribe('currentIssue', this.data._id);
+
 })
 
 Template.closeIssue.onRendered(function () {
@@ -15,7 +16,10 @@ Template.closeIssue.helpers({
     },
 
     issueActive: function () {
-        return Issues.findOne(this._id).issueActive;
+        var issue = Issues.findOne(this._id);
+        if (issue) {
+            return issue.issueActive;
+        }
     }
 })
 
