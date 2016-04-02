@@ -45,6 +45,19 @@ Template.viewIssue.helpers({
             return "всем"
         }
     },
+    districtBerdsk: function () {
+        var currIssue =  Issues.findOne(this._id);
+        if (currIssue) {
+            var district = Address.findOne({_id: currIssue.districtId})
+            if (district) {
+                if (district.district == "г. Бердск") {
+                    return (district.district + ", ")
+                } else {
+                    return  (district.district + " район, ")
+                }
+            }
+        }
+    },
     created: function () {
         var issue = Issues.findOne({_id: this._id});
         if (issue) {

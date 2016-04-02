@@ -62,3 +62,19 @@ Router.route('/closeIssue/:_id', function () {
     });
 
 }, {name: 'closeIssue'});
+
+Router.route('/feedback', {name: 'feedback'});
+Router.route('/listFeedback', {name: 'listFeedback'});
+
+
+
+Router.route('/viewFeedback/:_id', function () {
+    var params = this.params;
+    var id = params._id;
+    this.render('viewFeedback', {
+        data: function () {
+            return {_id: this.params._id};
+        }
+    });
+
+}, {name: 'viewFeedback'});

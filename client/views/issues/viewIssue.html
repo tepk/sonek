@@ -43,7 +43,7 @@
                 <tr>
                     <td>Адрес:</td>
                     <td colspan="3">
-                        {{{data.address}}},&nbsp;{{{data.hnumber}}}
+                        {{districtBerdsk}}{{{data.address}}},&nbsp;{{{data.hnumber}}}
                     </td>
                 </tr>
                 <tr>
@@ -54,11 +54,9 @@
                 <tr>
                     {{#if isAdmin}}
                         {{#if issueActive}}
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue"
-                                                   value="Редактировать заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="editIssue" value="Редактировать заявку"/></td>
 
-                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue"
-                                                   value="Закрыть заявку"/></td>
+                            <td colspan="2"><input type="button" class="{{data._id}}" id="closeIssue" value="Закрыть заявку"/></td>
                         {{else}}
                             <td colspan="3"></td>
                             <td><input type="button" class="{{data._id}}" id="resumeIssue" value="Возобновить заявку"/>

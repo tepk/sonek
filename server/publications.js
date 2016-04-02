@@ -22,4 +22,14 @@ Meteor.publish('addressByDistrict', function(id) {
     return Address.find({_id: id});
 })
 
+Meteor.publish('feedbackUnChecked', function() {
+    return Feedback.find({checked: false});
+})
+
+Meteor.publish('feedback', function() {
+    return Feedback.find({});
+})
+
+
+
 
