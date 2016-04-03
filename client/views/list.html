@@ -6,8 +6,7 @@
         <tr class="header">
             <th class="performer">Назначено</th>
             <th class="createdAt">Дата создания</th>
-            <th class="assignDate">Срок актуальности заявки<sup>[<a href="#"
-                                                                    title="Дата и время, после которой текущая заявка пропадет из выборки">?</a>]</sup>
+            <th class="assignDate">Срок актуальности заявки<sup>[<a href="#" title="Дата и время, после которой текущая заявка пропадет из выборки">?</a>]</sup>
             </th>
             <th class="districtName">Район:
                 <select class="district-select">
@@ -26,8 +25,7 @@
                 </td>
                 <td>{{parseDate assignDate}}</td>
                 <td>{{districtName}}</td>
-                <td class="issueTitle"><a href="{{pathFor route='viewIssue'}}" class="viewIssue"
-                                          id="{{_id}}">{{title}}</a></td>
+                <td class="issueTitle"><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{title}}</a></td>
             </tr>
         {{/each}}
     </table>

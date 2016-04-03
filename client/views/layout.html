@@ -12,14 +12,25 @@
                     <span class="floatRight">
                     {{loggedIn}}&nbsp;(<a href="{{pathFor route='list'}}" class="logOut">выход</a>)
                     </span>
-                    <span class="floatRight"><a href="{{pathFor route='viewCrew'}}">Список пользователей</a></span>
                     {{#if isAdmin}}
-                        <span class="floatRight"><a href="{{pathFor route='listFeedback'}}">Заявки обратной связи</a>&nbsp;({{feedbackUnChecked}})</span>
+                        <span class="floatRight"><a href="{{pathFor route='viewCrew'}}">Список пользователей</a></span>
+                        <span class="floatRight">
+                            <a href="{{pathFor route='listFeedback'}}">Заявки обратной связи</a>
+                            {{#if feedbackUnChecked}}
+                                ({{feedbackUnChecked}})
+                            {{/if}}
+                        </span>
+                    {{else}}
+
+                            <span class="floatRight">
+                                <a href="{{userId}}">Просмотр и редактирование профайла</a>
+                            </span>
+
                     {{/if}}
                     <span class="floatRight"><a href="{{pathFor route='list'}}">Список заявок</a></span>
                     <span class="floatRight"><a href="{{pathFor route='createNew'}}">Создать заявку</a></span>
 
-                    <a href="/" id="logo"><img src="/images/logo.png"/></a>
+                    <a href="/" id="logo"><img src="/images/sonekBeta.png"/></a>
                 </div>
 
                 {{> yield}}

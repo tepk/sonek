@@ -21,6 +21,7 @@ Router.route('/viewIssue/:_id', function () {
 
 Router.route('/viewProfile/:_id', function () {
     var params = this.params;
+
     var id = params._id;
     this.render('viewProfile', {
         data: function () {

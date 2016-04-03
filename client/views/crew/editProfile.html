@@ -11,13 +11,15 @@
 
             </tr>
             <tr>
-                <td><input type="text" value="brthday" id="datetimepicker"/></td>
-                <td><input type="text" value="cstmrday" /></td>
+                <td><input type="text" value="{{brthday}}" id="datetimepicker"/></td>
+                <td><input type="text" value="{{cstmrday}}" id="cstmrday"/></td>
                 <td><input type="text" value="{{rgstrday}}" disabled /></td>
             </tr>
-            <tr></tr>
+            <tr>
+                <td colspan="3"><input type="submit" class="issueSubmit" value="Сохранить изменения" /></td>
+            </tr>
         </table>
 
     </form>
-    <div id="separator" style="display: block;">&nbsp;</div>
+
 </template>

@@ -2,7 +2,7 @@
     <h1>Заявки, оставленные через обратную связь</h1>
     <ul>
     {{#each feedbackIssue}}
-        <li><a href="{{pathFor route='viewFeedback'}}" class="{{_id}}">{{message}}</a></li>
+        <li>Обращение от <a href="{{pathFor route='viewFeedback'}}" class="{{_id}}">{{timeStamp}}</a></li>
     {{/each}}
     </ul>
 </template>

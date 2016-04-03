@@ -36,6 +36,18 @@ Template.viewProfile.helpers({
             return "выездной инженер"
         }
     },
+    age: function () {
+      if (Crew.findOne(this._id).brthday) {
+          var currAge = ((new Date() - Crew.findOne(this._id).brthday) / 31536000000.42889 | 0)
+          return currAge
+      }
+    },
+    cstmrAge: function () {
+        if (Crew.findOne(this._id).cstmrday) {
+            var currCstmrAge = ((new Date() - Crew.findOne(this._id).cstmrday) / 31536000000.42889 | 0)
+            return currCstmrAge
+        }
+    },
     userPic: function () {
         var avatar = Crew.findOne(this._id).avatar
         if (avatar) {

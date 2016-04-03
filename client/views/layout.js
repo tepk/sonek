@@ -19,6 +19,11 @@ Template.layout.helpers({
         if ((count) && (count > 0)) {
             return count
         }
+    },
+    userId: function () {
+        console.log(Crew.findOne({userId: Meteor.userId()})._id)
+        id = Crew.findOne({userId: Meteor.userId()})._id
+        return "/viewProfile/" + id
     }
 })
 

@@ -8,7 +8,7 @@ Template.viewCrew.onRendered(function () {
 
 Template.viewCrew.helpers({
     recentCrew: function () {
-        var currCrew = Crew.find({}).fetch()
+        var currCrew = Crew.find({})
         return currCrew
     },
     estpGroup: function() {
