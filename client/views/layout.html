@@ -3,29 +3,61 @@
     <link rel="icon" href="/favicon.ico" type="image/ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 
 <template name="layout">
     {{#if Template.subscriptionsReady}}
     <div class="page-wrap">
-        {{#if currentUser}}
-            <div id="menu">
-                <span class="floatRight">
-                    {{loggedIn}} (<a href="{{pathFor route='list'}}" class="logOut">выход</a>)
-                </span>
-                {{#if isAdmin}}
-                    <span class="floatRight"><a href="{{pathFor route='createCrew'}}">Добавить пользователя</a></span>
+
+            <div id="content">
+                <div id="leftMenu">
+                    <table>
+                        <tr>
+                            <td class="menu-item"><img src="./images/logo.png" /></td>
+                        </tr>
+                {{#if currentUser}}
+                        <tr>
+                            <td class="menu-item"><a href="/">Учетные карточки</a></td>
+                        </tr>
+                        <tr>
+                            <td class="menu-item">Дни рождения</td>
+                        </tr>
+                        <tr>
+                            <td class="menu-item"><a href="/createCrew">Регистрация участника</a></td>
+                        </tr>
+                    {{else}}
+                    <tr>
+                        <td class="menu-item"></td>
+                    </tr>
+                    <tr>
+                        <td class="menu-item"></td>
+                    </tr>
+                    <tr>
+                        <td class="menu-item"></td>
+                    </tr>
                 {{/if}}
-                <a href="/" id="logo"><img src="/images/logo.png"/></a>
-
-
+                        <tr>
+                            <td class="menu-item"></td>
+                        </tr>
+                        <tr>
+                            <td class="menu-item"></td>
+                        </tr>
+                        <tr>
+                            <td class="menu-item"><a href="#" id="logout">Выход</a></td>
+                        </tr>
+                    </table>
+                </div>
+                {{#if currentUser}}
+                <div id="yield">
+                {{> yield}}
+                </div>
+                {{else}}
+                    {{> login}}
+                {{/if}}
             </div>
 
-            {{> yield}}
-        {{else}}
-            {{> login}}
-        {{/if}}
+
     </div>
-    {{>copyright}}
     {{/if}}
 </template>

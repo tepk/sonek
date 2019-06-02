@@ -2,11 +2,11 @@
   // Server authentication info
   "servers": [
     {
-      "host": "52.28.196.10",
-      "username": "ubuntu",
-      // "password": "password"
+      "host": "192.168.0.5",
+      "username": "estp",
+      "password": "Just4Fun"
       // or pem file (ssh based authentication)
-      "pem": "~/Documents/sonek.pem"
+      //"pem": "~/Documents/sonek.pem"
     }
   ],
 
@@ -34,7 +34,7 @@
 
   // Configure environment
   "env": {
-    "ROOT_URL": "http://sonek.pro",
+    "ROOT_URL": "http://192.168.0.5",
     "MONGO_URL": "mongodb://localhost"
   },
 

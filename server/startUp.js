@@ -1,7 +1,7 @@
 Meteor.startup(function () {
     var addr = Address.find({}).count();
     var admin = Crew.findOne({fname: "administrator"});
-    if (!admin) {
+    /* if (!admin) {
         console.log('First launch. Use admin/Just4Fun to log in')
         Accounts.createUser({
                 username: "admin", password: "Just4Fun", profile: {
@@ -12,7 +12,7 @@ Meteor.startup(function () {
             })
     } else {
         console.log('admin already exists')
-    }
+    } */
     if (addr <=0) {
         console.log(addr)
         var streets = Assets.getText('package.json')

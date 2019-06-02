@@ -14,11 +14,17 @@ Template.layout.helpers({
         }
     },
     isAdmin: function () {
-        console.log(Crew.findOne({userId: Meteor.userId()}).isAdmin)
-        return Crew.findOne({userId: Meteor.userId()}).isAdmin
+        /* console.log(Crew.findOne({userId: Meteor.userId()}).isAdmin)
+        return Crew.findOne({userId: Meteor.userId()}).isAdmin */
+        return true
     }
 })
 
 Template.layout.events({
+        "click #logout": function(e) {
+            console.log('click ' + e)
+            Meteor.logout()
+            e.preventDefault()
 
+        }
 })

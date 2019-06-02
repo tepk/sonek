@@ -1,29 +1,20 @@
 <template name="list">
-    <h2>Открытые заявки</h2>
     {{#if Template.subscriptionsReady}}
-    <div class="separator">
-        <span class="floatRight"><a href="{{pathFor route='createNew'}}">Создать заявку</a></span>
-    </div>
-    <table id="issueList">
-        <tr class="header">
-            <td>Дата создания</td>
-            <td>Дата назначения</td>
-            <td>Назначено</td>
-            <td>Краткое описание</td>
-        </tr>
-        {{#each issues}}
-            <tr>
-                <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{createdAt}}</a></td>
-                <td>{{assignDate}}</td>
-                <td>{{performer}}</td>
-                <td><a href="{{pathFor route='viewIssue'}}" class="viewIssue" id="{{_id}}">{{title}}</a></td>
+        <h1>Учетные карточки Членов Дома Ученых</h1>
+            <div id="sortBy">
+                <input type="text" id="fastSearch" placeholder="быстрый поиск (по фамилии)"/><br />
+                Сортировка: по <span class="tnumber">номеру билета</span>, по <span class="lname">фамилии</span> или по <span class="section">основной секции</span>
+            </div>
+        <table class="cards-view">
+            {{#each members}}
+            <tr class="card-with-photo" id="{{_id}}">
+                <td class="td3"><img src="./images/noavatar.png" /></td>
+                <td class="td1">{{lname}} {{fname}}<br /><span class="small">{{section}}</span></td>
             </tr>
-        {{/each}}
-    </table>
-    <div class="separator">
-        <span class="hide"><input type="checkbox" class="hideComplete" checked="checked" />Спрятать закрытые
-            заявки</span>
-    </div>
+            {{/each}}
+        </table>
+    Итого {{counter}}
+
     {{else}}
         {{> loading}}
     {{/if}}

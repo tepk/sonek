@@ -1,13 +1,45 @@
 <template name="createCrew">
-    <h1>Меню редактирования профайла сотрудников.</h1>
+    <h1>Карточка нового участника</h1>
 
-    <form id="createCrew">
-        <input type="text" placeholder="Фамилия" id="lname"/>&nbsp;
-        <input type="text" placeholder="Имя" id="fname"/>&nbsp;
-        <input type="text" placeholder="Отчество" id="sname"/><br/>
-        <input type="text" placeholder="Желаемый логин" id="username"/>&nbsp;
-        <input type="password" placeholder="Пароль" id="setPassword"/>&nbsp;
-        <input type="password" placeholder="Повторите пароль" id="checkPassword"/><br />
-        <input type="submit" value="Добавить пользователя"/>
+    <form id='createMember'>
+        <table>
+            <tr>
+                <td colspan="2" class="header" >Членский билет №<input type="number" id="tNumber" value="{{guessNumber}}"> от <input type="date" id="dCreated" value="{{today}}"></td>
+            </tr>
+            <tr class="avatar">
+                <td class="td3 image-container">
+                    <input type="file" id="uploadPhoto" />
+                    <img src="./images/noavatar.png">
+                    <div id="fileMenu"><span class="choosePhoto">загрузить фото</span></div>
+                </td>
+                <td class="td1" rowspan="2">
+                    <input type="text" id="lname" placeholder="Фамилия"> <input type="checkbox" id="mStatus" /> <span class="small">Женат / Замужем</span><br />
+                    <input type="text" id="fname" placeholder="Имя, Отчество"><br />
+                    <input type="date" id="dBirth"> <span class="small">дата рождения</span><br />
+                    <input type="text" id="job" placeholder="Место работы">, <input type="text" id="speciality" placeholder="Специальность"><br />
+                    <input type="text" id="position" placeholder="Должность">, <input type="text" id="aDegree" placeholder="Ученая степень"><br />
+                    <input type="text" id="section" placeholder="Основная секция">
+                </td>
+            </tr>
+            <tr>
+                <td class="td3"></td>
+            </tr>
+            <tr>
+                <td class="td3"></td>
+                <td class="td1">
+                    <input type="text" id="address" placeholder="Домашний адрес"><br />
+                    <input type="text" id="pnumber" placeholder="Контактный номер">
+                    <input type="text" id="email" placeholder="Электронная почта"><br />
+                    <input type="checkbox" id="alert" /> <span class="small">Получать уведомления по электронной почте</span><br />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td3"></td>
+                <td class="td1 submitForm"><input type="submit" value="Зарегистрировать участника" /></td>
+            </tr>
+
+
+        </table>
     </form>
 </template>

@@ -1,5 +1,7 @@
 html {
   height: 100%;
+  font-family: 'ubuntu', sans-serif;
+  overflow-y: scroll;
 }
 
 body {
@@ -8,173 +10,357 @@ body {
 }
 
 * {
-  font-family: sans-serif;
+  font-family: 'ubuntu', sans-serif;
+
+}
+.closeCard {
+
+}
+.editCard {
+
+}
+.editContent {
 
 }
 
-h1 {
-  font-weight: 100;
-  font-family: sans-serif;
-  font-size: 2rem;
-}
+.searchContent {
 
-h2 {
-  margin-left: -20px;
-  font-weight: 100;
-  font-family: sans-serif;
-  font-size: 1.8rem;
-}
-
-h3 {
-  text-align: center;
-  border: 1px solid #2f2f2f;
-  font-family: sans-serif;
-  background-color: #ffffaa;
-  font-weight: 200;
-  height: 25px;
-}
-
-h4 {
-  font-weight: 100;
-  font-family: sans-serif;
-  font-size: 1.2rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
 }
 
 a {
-  text-decoration: underline;
-  color: #880000;
+  color: #000000;
 }
 
 a:hover {
+  color: #4b4b4b;
   text-decoration: none;
-  color: #c40e1b;
 }
 
-h1 a {
-  text-decoration: none;
+a :visited {
   color: #000000;
 }
 
-h1 a:hover {
-  text-decoration: none;
-  color: #000000;
+h1 {
+  font-family: 'ubuntu', sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-#menu {
-  line-height: 50px;
-  height: 50px;
-  background: #c1c1c7;
-  border-color: #7f7f7f;
-  vertical-align: baseline;
+#fileMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.16);
+  display: none;
 }
 
-#menu * {
+.choosePhoto {
+  margin-top: 35px;
+  background-color: rgba(0, 0, 0, 0.51);
+  color: rgba(255, 255, 255, 0.75);
+  display: block;
+}
+
+#uploadPhoto {
+  display: none;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container:hover #fileMenu {
+  display: block;
+  cursor: default;
+}
+
+#fastSearch {
+  width: 80%;
+  margin-right: 0;
+  margin-left: auto;
+  height: 1.2em;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: rgba(51, 170, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.15);
+
+}
+
+#sortBy {
+  font-family: 'ubuntu', sans-serif;
+  font-size: 0.9em;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+#sortBy span {
+  color: #33aaff;
+  border-bottom: 1px dotted #33aaff;
+  cursor: pointer;
+}
+
+#leftMenu {
+  float: left;
+  margin: 0;
+  width: 200px;
+  border-top: 0px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.06);
+
+}
+
+#tNumber {
+  height: 1em;
+  font-size: 1em;
+  width: 2em;
+}
+
+#dCreated {
+  height: 1em;
+  font-size: 1em;
+  width: 9em;
+}
+
+#dBirth {
+  height: 1.2em;
+  font-size: 1em;
+  width: 9em;
+  margin-bottom: 5px;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+#job {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+
+#speciality {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+
+#alert {
+  height: 1.2em;
+  margin-bottom: 8px;
+}
+
+#mStatus {
+  height: 1.2em;
+  margin-bottom: 8px;
+}
+
+
+#aDegree {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+
+#pnumber {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+#email {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+#address {
+  height: 1em;
+  font-size: 1em;
+  width: 15em;
+  margin-bottom: 5px;
+}
+
+#position {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+
+#section {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+
+.avatar {
+  height: 100px;
+}
+
+#lname {
+  height: 1em;
+  font-size: 1em;
+  width: 11em;
+  margin-bottom: 5px;
+}
+
+#fname {
+  height: 1em;
+  font-size: 1em;
+  width: 15em;
+  margin-bottom: 5px;
+}
+
+.header {
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.34);
+}
+
+.submitForm {
+  float: right;
+}
+
+#yield {
+  float: left;
+  position: relative;
+}
+
+#createMember {
+  width: 500px;
+  margin-left: 120px;
+}
+
+#createMember table {
+  width: 500px;
+  border: 1px solid;
+}
+
+#createMember td .header {
+  border: 1px solid;
+}
+.image-container {
+  border: 1px solid;
+}
+
+#createMember .td1 {
+  text-align: left;
+  vertical-align: top;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+#content {
+  min-height: 100%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -90px;
+
+}
+
+#leftMenu table {
+  width: 100%;
+}
+
+#leftMenu table tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+.menu-item {
+  font-family: 'ubuntu', sans-serif;
+  height: 64px;
   vertical-align: middle;
-}
-
-#logo {
-  text-decoration: none;
-}
-
-#logo:hover {
-  text-decoration: none;
-}
-
-#issue {
-  width: 580px;
-}
-
-
-
-#marginalia {
-  margin-left: 70px;
-  font-size: 0.95rem;
-}
-
-#issueList {
-  width: 100%;
-  border: 1px solid #000000;
-  font-size: 0.9rem;
-}
-
-#issueList tr {
-
-}
-
-#issueList td {
   text-align: center;
-  border: 1px solid #a7a7a7;
 }
 
-#warning {
-  width: 100%;
-  margin-left: -70px;
-  height: 40px;
+/* общий вид таблицы */
+.cards-view {
+  width: 500px;
+  margin-left: 120px;
+  font-family: 'ubuntu', sans-serif;
+}
+/**/
+
+/* строка таблицы */
+.card-with-photo {
+  height: 100px;
+  font-family: 'ubuntu', sans-serif;
+
+}
+
+.card-with-photo:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+/**/
+/* ячейка с ФИО и секцией */
+.td1 {
+  vertical-align: middle;
   text-align: center;
-  font-size: 2rem;
-  font-weight: 300;
-  background-color: #f2ff6c;
-  border: 2px dashed black;
+  font-family: 'ubuntu', sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
 }
 
-.triangle {
-  color: #ff0000;
-  text-decoration: underline;
-  font-size: 2rem;
+.small {
+  font-size: 0.95em;
+  color: rgba(0, 0, 0, 0.61);
 }
+/**/
+
+.td2 {
+  vertical-align: top;
+  text-align: center;
+  font-family: 'ubuntu', sans-serif;
+}
+.td3 {
+  text-align: center;
+  font-family: 'ubuntu', sans-serif;
+  width: 100px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+}
+
 
 .login-page {
-  text-align: center;
-  background-color: #c1c1c1;
-  border-radius: 7px;
-  margin-top: 5%;
-  width: 60%;
-  margin-left: 20%;
 
 }
 
 .separator {
-  width: 100%;
-  height: 40px;
-  display: block;
-  position: relative;
+
 }
 
 .floatRight {
-  float: right;
-  margin-right: 10px;
+
 }
 
 .hide {
-  float: right;
-  color: #201d88;
-  padding-top: 10px;
+
 }
 
 .header {
-  border: 1px solid red;
-}
 
-#closeIssue {
-  float: right;
-}
-
-#resumeIssue {
-  float: right;
-}
-
-#editIssue {
-  float: left;
 }
 
 .logOut {
 
 }
 
+tr.members:hover {
+
+}
+
 /* this is sticky-footer */
 .page-wrap {
+  height: 1px;
   min-height: 100%;
   margin-bottom: -90px;
 }
