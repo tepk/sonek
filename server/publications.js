@@ -6,6 +6,7 @@ Meteor.publish('crew', function() {
     return Crew.find({});
 })
 
+
 Meteor.publish('address', function() {
     return Address.find({}, {fields: {district: 1}});
 })

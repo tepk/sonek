@@ -14,7 +14,11 @@ Template.list.onRendered(function () {
     bArr = Crew.find({dBirth: {$exists: true}}, {sort: {bParty: 1}}).fetch()
     bArr.forEach(function(v, i, a) {
         if (v.bParty >= today){
-            $('.bday-alert').css("display","inline-block")
+            var bDate = new Date(new Date().getFullYear() + '-' + v.bParty)
+            var currDate = new Date().getTime()
+            if ((bDate - currDate) <= 604800000) {
+                $('.bday-alert').css("display", "inline-block")
+            }
             }
     })
 
