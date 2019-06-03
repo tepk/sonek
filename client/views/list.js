@@ -75,6 +75,10 @@ Template.list.events({
         console.log(Crew.find({lname: {$regex: search}}).fetch())
     },
 
+    "click .card-with-photo": function(e) {
+        console.log(e.currentTarget)
+    }
+
     /* "keyup #passwordInput": function() {
         Session.set("passwordInput", $('#passwordInput').val())
 

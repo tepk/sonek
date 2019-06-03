@@ -1,0 +1,44 @@
+<template name="viewCrew">
+    <h1>Просмотр карточки</h1>
+    <form id='createMember'>
+        <table>
+            <tr>
+                <td colspan="2" class="header" >Членский билет №<input type="number" id="tNumber" value="{{data.tNumber}}"> от <input type="date" id="dCreated" value="{{data.dCreated}}"></td>
+            </tr>
+            <tr class="avatar">
+                <td class="td3 image-container">
+                    <input type="file" id="uploadPhoto" />
+                    <img src="/images/noavatar.png">
+                    <div id="fileMenu"><span class="choosePhoto">загрузить фото</span></div>
+                </td>
+                <td class="td1" rowspan="2">
+                    <input type="text" id="lname" placeholder="Фамилия" value="{{data.lname}}"> <input type="checkbox" id="mStatus" /> <span class="small">Женат / Замужем</span><br />
+                    <input type="text" id="fname" placeholder="Имя, Отчество" value="{{data.fname}}"><br />
+                    <input type="date" id="dBirth" value="{{data.dBirth}}"> <span class="small">дата рождения</span><br />
+                    <input type="text" id="job" placeholder="Место работы" value="{{data.job}}">, <input type="text" id="speciality" placeholder="Специальность" value="{{data.speciality}}"><br />
+                    <input type="text" id="position" placeholder="Должность" value="{{data.position}}">, <input type="text" id="aDegree" placeholder="Ученая степень" value="{{data.aDegree}}"><br />
+                    <input type="text" id="section" placeholder="Основная секция" value="{{data.section}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="td3"></td>
+            </tr>
+            <tr>
+                <td class="td3"></td>
+                <td class="td1">
+                    <input type="text" id="address" placeholder="Домашний адрес" value="{{data.address}}"><br />
+                    <input type="text" id="pnumber" placeholder="Контактный номер" value="{{data.pnumber}}">
+                    <input type="text" id="email" placeholder="Электронная почта" value="{{data.email}}"><br />
+                    <input type="checkbox" id="alert" /> <span class="small">Получать уведомления по электронной почте</span><br />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td3"></td>
+                <td class="td1 submitForm"><!-- <input type="submit" value="Зарегистрировать участника" /> --></td>
+            </tr>
+
+
+        </table>
+        </form>
+</template>

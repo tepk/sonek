@@ -17,10 +17,10 @@ Router.route('/viewIssue/:_id', function () {
 
 }, {name: 'viewIssue'});
 
-Router.route('/editIssue/:_id', function () {
+Router.route('/viewCrew/:_id', function () {
     var params = this.params;
     var id = params._id;
-    this.render('editIssue', {
+    this.render('viewCrew', {
         data: function () {
             return {_id: this.params._id};
         }
