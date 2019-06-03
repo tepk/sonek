@@ -8,7 +8,7 @@
         <table class="cards-view">
             {{#each members}}
             <tr class="card-with-photo" id="{{_id}}">
-                <td class="td3"><img src="./images/noavatar.png" /></td>
+                <td class="td3"><img src="{{photo}}" /></td>
                 <td class="td1"><a href="/viewCrew/{{_id}}">{{lname}} {{fname}}</a><br /><span class="small">{{section}}</span></td>
             </tr>
             {{/each}}

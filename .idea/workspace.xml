@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c890170-b720-4962-97ad-015e4b6cee31" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/client/views/birthDays/birthDays.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/views/birthDays/birthDays.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/theme.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/views/crew/createCrew.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/crew/createCrew.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/views/crew/createCrew.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/crew/createCrew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views/crew/viewCrew.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/crew/viewCrew.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/list.html" afterDir="false" />
     </list>
     <ignored path="sonek.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,16 +22,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/views/crew/createCrew.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" lean-forward="true" selection-end-column="28" />
+            <state relative-caret-position="165">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/birthDays/birthDays.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -52,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/birthDays/birthDays.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="525">
+              <caret line="35" column="81" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -79,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/crew/createCrew.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -115,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="150">
+              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -191,17 +182,17 @@
         <option value="$PROJECT_DIR$/client/views/common/login.html" />
         <option value="$PROJECT_DIR$/client/views/crew/editCrew.html" />
         <option value="$PROJECT_DIR$/client/views/crew/editCrew.js" />
-        <option value="$PROJECT_DIR$/client/views/list.html" />
         <option value="$PROJECT_DIR$/client/views/crew/viewCrew.js" />
-        <option value="$PROJECT_DIR$/client/views/crew/createCrew.html" />
         <option value="$PROJECT_DIR$/client/views/crew/viewCrew.html" />
         <option value="$PROJECT_DIR$/client/routes.js" />
-        <option value="$PROJECT_DIR$/client/views/crew/createCrew.js" />
         <option value="$PROJECT_DIR$/client/views/list.js" />
         <option value="$PROJECT_DIR$/client/styles/theme.less" />
         <option value="$PROJECT_DIR$/client/views/layout.html" />
-        <option value="$PROJECT_DIR$/client/views/birthDays/birthDays.js" />
         <option value="$PROJECT_DIR$/client/views/birthDays/birthDays.html" />
+        <option value="$PROJECT_DIR$/client/views/birthDays/birthDays.js" />
+        <option value="$PROJECT_DIR$/client/views/list.html" />
+        <option value="$PROJECT_DIR$/client/views/crew/createCrew.js" />
+        <option value="$PROJECT_DIR$/client/views/crew/createCrew.html" />
       </list>
     </option>
   </component>
@@ -321,12 +312,12 @@
       <workItem from="1559299188436" duration="4988000" />
       <workItem from="1559364675271" duration="18976000" />
       <workItem from="1559490598770" duration="2546000" />
-      <workItem from="1559546760550" duration="7305000" />
+      <workItem from="1559546760550" duration="8298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50665000" />
+    <option name="totallyTimeSpent" value="51658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="980" extended-state="0" />
@@ -581,13 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/crew/createCrew.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" lean-forward="true" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/crew/viewCrew.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -595,24 +579,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/crew/createCrew.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -637,17 +607,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/birthDays/birthDays.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/birthDays/birthDays.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="128" selection-start-line="7" selection-start-column="128" selection-end-line="7" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/birthDays/birthDays.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="81" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/crew/createCrew.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/crew/createCrew.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
     </entry>
