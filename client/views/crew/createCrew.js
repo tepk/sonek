@@ -1,5 +1,6 @@
 Template.createCrew.onCreated(function () {
-
+    Session.set('mStatus', false);
+    Session.set('alert', false);
 })
 
 Template.createCrew.onRendered(function () {
@@ -24,18 +25,23 @@ Template.createCrew.events({
     "submit #createMember": function (e, t) {
 
         var tNumber = $("#tNumber").val(),
-            lname = $("#lname").val()
+            lname = $("#lname").val(),
+            dBirth = $("#dBirth").val()
 
         if (Crew.findOne({tNumber: tNumber})) {
             toastr.error('Билет с таким номером уже существует', 'Ошибка');
             return false
         }
-            if ((!tNumber) || (tNumber == '')) {
+            if ((!tNumber) || (tNumber === '')) {
                 toastr.error('Необходимо внести номер членского билета', 'Ошибка');
                 return false
             }
-            if ((!lname) || (lname == "")) {
+            if ((!lname) || (lname === "")) {
                 toastr.error('Необходимо внести фамилию члена', 'Ошибка');
+                return false
+            }
+            if ((!dBirth) || (dBirth === '')) {
+                toastr.error('Необходимо внести дату рождения', 'Ошибка');
                 return false
             }
 
@@ -55,6 +61,8 @@ Template.createCrew.events({
         ) */
         var tnumberString = $("#tNumber").val()
         var tnumberInt = Number(tnumberString)
+        var mStatus = Session.get('mStatus')
+        var alert = Session.get('alert')
         Crew.insert({
             tNumber: tnumberInt,
             dCreated: $("#dCreated").val(),
@@ -67,10 +75,12 @@ Template.createCrew.events({
             aDegree: $("#aDegree").val(),
             address: $("#address").val(),
             email: $("#email").val(),
-            mStatus: $("#mStatus").val(),
-            alert: $("#alert").val(),
+            mStatus: mStatus,
+            alert: alert,
             pnumber: $("#pnumber").val(),
-            specialty: $("#specialty").val()
+            speciality: $("#speciality").val(),
+            bParty: $('#dBirth').val().substr(5, 5),
+            hDate: $('#dBirth').val().substr(8, 2) + '.' + $('#dBirth').val().substr(5, 2) + '.' + $('#dBirth').val().substr(0, 4)
         },
             globalUI.callback(function(){
                 toastr.success('Карточка члена клуба добавлена', 'Выполнено');
@@ -87,6 +97,11 @@ Template.createCrew.events({
         console.log(e.currentTarget.files[0].size)
     },
     "click #mStatus": function(e) {
+        Session.set('mStatus', e.currentTarget.checked)
         console.log(e.currentTarget.checked)
-    }
+    },
+    "click #alert": function(e) {
+        Session.set('alert', e.currentTarget.checked)
+        console.log(e.currentTarget.checked)
+    },
 })

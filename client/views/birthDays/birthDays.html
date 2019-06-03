@@ -1,0 +1,13 @@
+<template name="birthDays">
+    <h1>Ближайшие дни рождения</h1>
+    {{#if Template.subscriptionsReady}}
+            <table class="cards-view">
+                {{#each data}}
+                    <tr class="card-with-photo" id="{{_id}}">
+                        <td class="td3"><img src="./images/noavatar.png" /></td>
+                        <td class="td1"><a href="/viewCrew/{{_id}}">{{lname}} {{fname}}</a><br /><span class="small">{{hDate}}, {{age}}</span></td>
+                    </tr>
+                {{/each}}
+            </table>
+    {{/if}}
+</template>

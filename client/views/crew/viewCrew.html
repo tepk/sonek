@@ -3,7 +3,7 @@
     <form id='createMember'>
         <table>
             <tr>
-                <td colspan="2" class="header" >Членский билет №<input type="number" id="tNumber" value="{{data.tNumber}}"> от <input type="date" id="dCreated" value="{{data.dCreated}}"></td>
+                <td colspan="2" class="header" >Членский билет №<input type="number" id="tNumber" value="{{data.tNumber}}" disabled> от <input type="date" id="dCreated" value="{{data.dCreated}}" disabled></td>
             </tr>
             <tr class="avatar">
                 <td class="td3 image-container">
@@ -12,12 +12,12 @@
                     <div id="fileMenu"><span class="choosePhoto">загрузить фото</span></div>
                 </td>
                 <td class="td1" rowspan="2">
-                    <input type="text" id="lname" placeholder="Фамилия" value="{{data.lname}}"> <input type="checkbox" id="mStatus" /> <span class="small">Женат / Замужем</span><br />
-                    <input type="text" id="fname" placeholder="Имя, Отчество" value="{{data.fname}}"><br />
-                    <input type="date" id="dBirth" value="{{data.dBirth}}"> <span class="small">дата рождения</span><br />
-                    <input type="text" id="job" placeholder="Место работы" value="{{data.job}}">, <input type="text" id="speciality" placeholder="Специальность" value="{{data.speciality}}"><br />
-                    <input type="text" id="position" placeholder="Должность" value="{{data.position}}">, <input type="text" id="aDegree" placeholder="Ученая степень" value="{{data.aDegree}}"><br />
-                    <input type="text" id="section" placeholder="Основная секция" value="{{data.section}}">
+                    <input type="text" id="lname" placeholder="Фамилия" value="{{data.lname}}" disabled> <input type="checkbox" id="mStatus" checked="{{data.mStatus}}" disabled/> <span class="small">Женат / Замужем</span><br />
+                    <input type="text" id="fname" placeholder="Имя, Отчество" value="{{data.fname}}" disabled><br />
+                    <input type="date" id="dBirth" value="{{data.dBirth}}" disabled> <span class="small">дата рождения</span><br />
+                    <input type="text" id="job" placeholder="Место работы" value="{{data.job}}" disabled>, <input type="text" id="speciality" placeholder="Специальность" value="{{data.speciality}}" disabled><br />
+                    <input type="text" id="position" placeholder="Должность" value="{{data.position}}" disabled>, <input type="text" id="aDegree" placeholder="Ученая степень" value="{{data.aDegree}}" disabled><br />
+                    <input type="text" id="section" placeholder="Основная секция" value="{{data.section}}" disabled>
                 </td>
             </tr>
             <tr>
@@ -26,10 +26,10 @@
             <tr>
                 <td class="td3"></td>
                 <td class="td1">
-                    <input type="text" id="address" placeholder="Домашний адрес" value="{{data.address}}"><br />
-                    <input type="text" id="pnumber" placeholder="Контактный номер" value="{{data.pnumber}}">
-                    <input type="text" id="email" placeholder="Электронная почта" value="{{data.email}}"><br />
-                    <input type="checkbox" id="alert" /> <span class="small">Получать уведомления по электронной почте</span><br />
+                    <input type="text" id="address" placeholder="Домашний адрес" value="{{data.address}}" disabled><br />
+                    <input type="text" id="pnumber" placeholder="Контактный номер" value="{{data.pnumber}}" disabled>
+                    <input type="text" id="email" placeholder="Электронная почта" value="{{data.email}}" disabled><br />
+                    <input type="checkbox" id="alert" checked="{{data.alert}}" disabled/> <span class="small">Получать уведомления по электронной почте</span><br />
                 </td>
             </tr>
 

@@ -7,6 +7,16 @@ Template.list.onCreated(function () {
 })
 
 Template.list.onRendered(function () {
+    var today = new Date().toISOString().substr(0, 10).substr(5, 5)
+    var bArr = []
+    var nArr = []
+    var oArr = []
+    bArr = Crew.find({dBirth: {$exists: true}}, {sort: {bParty: 1}}).fetch()
+    bArr.forEach(function(v, i, a) {
+        if (v.bParty >= today){
+            $('.bday-alert').css("display","inline-block")
+            }
+    })
 
 })
 
