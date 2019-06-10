@@ -50,7 +50,7 @@ module.exports = {
   },
 
   mongo: {
-    version: '3.4.1',
+    version: '2.6.7',
     servers: {
       one: {}
     }

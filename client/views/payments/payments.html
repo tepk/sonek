@@ -1,0 +1,11 @@
+<template name="payments">
+    <h1>Оплата членских взносов</h1>
+    <table class="cards-view">
+        {{#each payers}}
+            <tr class="card-with-photo" id="{{_id}}">
+                <td class="td3"><img src="{{photo}}" /></td>
+                <td class="td1"><a href="/viewCrew/{{_id}}">{{lname}} {{fname}}</a><br /><span class="small">{{aDegree}}</span></td>
+            </tr>
+        {{/each}}
+    </table>
+</template>

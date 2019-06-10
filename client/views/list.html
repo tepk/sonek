@@ -3,13 +3,13 @@
         <h1>Учетные карточки Членов Дома Ученых</h1>
             <div id="sortBy">
                 <input type="text" id="fastSearch" placeholder="быстрый поиск (по фамилии)"/><br />
-                Сортировка: по <span class="tnumber">номеру карточки</span>, по <span class="lname">фамилии</span> или по <span class="section">основной секции</span>
+                Сортировка: по <span class="lname">фамилии</span>,  по <span class="tnumber">номеру карточки</span> или по <span class="section">основной секции</span>
             </div>
         <table class="cards-view">
             {{#each members}}
             <tr class="card-with-photo" id="{{_id}}">
                 <td class="td3"><img src="{{photo}}" /></td>
-                <td class="td1"><a href="/viewCrew/{{_id}}">{{lname}} {{fname}}</a><br /><span class="small">{{section}}</span></td>
+                <td class="td1"><a href="/viewCrew/{{_id}}">{{lname}} {{fname}}</a><br /><span class="small">{{aDegree}}</span></td>
             </tr>
             {{/each}}
         </table>
