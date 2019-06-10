@@ -1,7 +1,7 @@
 Template.list.onCreated(function () {
     this.subscribe('recent_issues');
     this.subscribe('crew');
-    Session.set("sort", "ticketNumber")
+    Session.set("sort", "lname")
     Session.set("searchInput", "")
 
 })

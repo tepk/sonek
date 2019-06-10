@@ -1,5 +1,6 @@
 Template.layout.onCreated(function () {
     this.subscribe('crew');
+    this.subscribe('payments');
 })
 
 Template.layout.onRendered(function () {
