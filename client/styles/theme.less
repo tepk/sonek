@@ -284,11 +284,19 @@ h1 {
 
 /* общий вид таблицы */
 .cards-view {
-  width: 500px;
+  width: 600px;
   margin-left: 120px;
   font-family: 'ubuntu', sans-serif;
+  margin-bottom: 40px;
 }
 /**/
+
+
+.showSort {
+  position: absolute;
+  background-color: rgba(248, 242, 36, 0.39);
+  display: block;
+}
 
 /* строка таблицы */
 .card-with-photo {
@@ -303,7 +311,7 @@ h1 {
 }
 
 /**/
-/* ячейка с ФИО и секцией */
+/* ячейка с ФИО и ученой степенью */
 .td1 {
   vertical-align: middle;
   text-align: center;
@@ -315,12 +323,26 @@ h1 {
   font-size: 0.95em;
   color: rgba(0, 0, 0, 0.61);
 }
+
+.payment {
+  color: #00bb00;
+
+  font-size: 1.2em;
+}
+
+.unpayment {
+  color: #bb0e0d;
+
+  font-size: 1.2em;
+}
 /**/
 
 .td2 {
-  vertical-align: top;
+  vertical-align: center;
   text-align: center;
   font-family: 'ubuntu', sans-serif;
+  width: 100px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
 }
 .td3 {
   text-align: center;
