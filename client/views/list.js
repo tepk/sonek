@@ -29,18 +29,18 @@ Template.list.helpers({
             }
         })
         if (Session.get('listPos') === 0) {
-            console.log('Итого активных ' + (actMem.length))
+            //console.log('Итого активных ' + (actMem.length))
             Session.set('counter', actMem.length)
             return actMem
         }
         if (Session.get('listPos') === 1) {
-            console.log('Итого неаактивных ' + (inactMem.length))
+            //console.log('Итого неаактивных ' + (inactMem.length))
             Session.set('counter', inactMem.length)
             return inactMem
         }
         else {
             Session.set('counter', allMem.length)
-            console.log('Итого ' + (allMem.length))
+            //console.log('Итого ' + (allMem.length))
             return allMem
         }
         //return Crew.find({lname: {$regex: Session.get("searchInput")}}, {sort: sget});

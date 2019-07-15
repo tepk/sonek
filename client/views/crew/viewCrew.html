@@ -1,44 +1,27 @@
 <template name="viewCrew">
-    <h1>Просмотр карточки</h1>
-    <form id='createMember'>
-        <table>
-            <tr>
-                <td colspan="2" class="header" >Членский билет №<input type="number" id="tNumber" value="{{data.tNumber}}" disabled> от <input type="date" id="dCreated" value="{{data.dCreated}}" disabled></td>
-            </tr>
-            <tr class="avatar">
-                <td class="td3 image-container">
-                    <input type="file" id="uploadPhoto" />
-                    <img src="{{data.photo}}">
-                    <div id="fileMenu"><span class="choosePhoto">загрузить фото</span></div>
-                </td>
-                <td class="td1" rowspan="2">
-                    <input type="text" id="lname" placeholder="Фамилия" value="{{data.lname}}" disabled> <input type="checkbox" id="mStatus" checked="{{data.mStatus}}" disabled/> <span class="small">Женат / Замужем</span><br />
-                    <input type="text" id="fname" placeholder="Имя, Отчество" value="{{data.fname}}" disabled><br />
-                    <input type="date" id="dBirth" value="{{data.dBirth}}" disabled> <span class="small">дата рождения</span><br />
-                    <input type="text" id="job" placeholder="Место работы" value="{{data.job}}" disabled>, <input type="text" id="speciality" placeholder="Специальность" value="{{data.speciality}}" disabled><br />
-                    <input type="text" id="position" placeholder="Должность" value="{{data.position}}" disabled>, <input type="text" id="aDegree" placeholder="Ученая степень" value="{{data.aDegree}}" disabled><br />
-                    <input type="text" id="section" placeholder="Основная секция" value="{{data.section}}" disabled>
-                </td>
-            </tr>
-            <tr>
-                <td class="td3"></td>
-            </tr>
-            <tr>
-                <td class="td3"></td>
-                <td class="td1">
-                    <input type="text" id="address" placeholder="Домашний адрес" value="{{data.address}}" disabled><br />
-                    <input type="text" id="pnumber" placeholder="Контактный номер" value="{{data.pnumber}}" disabled>
-                    <input type="text" id="email" placeholder="Электронная почта" value="{{data.email}}" disabled><br />
-                    <input type="checkbox" id="alert" checked="{{data.alert}}" disabled/> <span class="small">Получать уведомления по электронной почте</span><br />
-                </td>
-            </tr>
+    <h1 class="noprint">Просмотр карточки</h1>
+    <h2>Членский билет №{{data.tNumber}}</h2>
+    <h4>от {{data.dCreated}}</h4>
+    <div id="viewContent">
+        <img src="{{data.photo}}" style="float: left; margin-right: 15px;"/>
+        <div>
+            <span class="key">Фамилия</span><span class="value">{{data.lname}}</span>
+            <span class="key">Имя и отчество</span><span class="value">{{data.fname}}</span>
+            <span class="key">Дата рождения</span><span class="value">{{data.hDate}}</span>
+            <span class="key">Специальность</span><span class="value">{{data.speciality}}</span>
+            <span class="key">Ученая степень</span><span class="value">{{data.aDegree}}</span>
+            <span class="key">Место работы</span><span class="value">{{data.job}}</span>
+            <span class="key">Занимаемая должность</span><span class="value">{{data.position}}</span>
+            <span class="key">Секция</span><span class="value">{{data.section}}</span>
+            <span class="key">Семейное положение</span><span class="value">{{#if data.mStatus}}женат / замужем{{else}}холост / не замужем{{/if}}</span>
+            <span class="key">Домашний адрес</span><span class="value">{{data.address}}</span>
+            <span class="key">Телефон</span><span class="value">{{data.pnumber}}</span>
+            <span class="key">Электронная почта</span><span class="value">{{data.email}}</span>
+            <span class="key">Получать уведомления</span><span class="value">{{#if data.alert}}по электронной почте{{else}}почтой России{{/if}}</span>
 
-            <tr>
-                <td class="td3"><!-- <input type="number" id="paymentYear" /><button id="pay">Принять оплату</button> --></td>
-                <td class="td1 submitForm"><!-- <input type="submit" value="Зарегистрировать участника" /> --></td>
-            </tr>
-
-
-        </table>
-        </form>
+            <!-- <p>Фамилия: {{data.lname}}<br/>Имя и отчество: {{data.fname}}<br/>Дата рождения: {{data.hDate}}</p>
+            <p>Специальность: {{data.speciality}}<br/>Ученая степень: {{data.aDegree}}</p>
+            <p>Место работы: {{data.job}}<br/>Занимаемая должность: {{data.position}}</p> -->
+        </div>
+    </div>
 </template>

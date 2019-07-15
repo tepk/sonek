@@ -1,21 +1,18 @@
-/* Meteor.publish('recent_issues', function() {
-    return Issues.find({});
-}) */
-
 Meteor.publish('crew', function() {
-    return Crew.find({});
+    if (this.userId) {
+        return Crew.find({});
+    } else {
+        return []
+    }
 })
 
 Meteor.publish('payments', function() {
-    return Payments.find({});
+    if (this.userId) {
+        return Payments.find({});
+    } else {
+        return []
+    }
 })
 
-/* Meteor.publish('address', function() {
-    return Address.find({}, {fields: {district: 1}});
-}) */
-
-/* Meteor.publish('addressByDistrict', function(id) {
-    return Address.find({_id: id});
-}) */
 
 

@@ -30,7 +30,8 @@ Template.createCrew.events({
 
         var tNumber = $("#tNumber").val(),
             lname = $("#lname").val(),
-            dBirth = $("#dBirth").val()
+            dBirth = $("#dBirth").val(),
+            pnumber = $("#pnumber").val()
 
         if (Crew.findOne({tNumber: tNumber})) {
             toastr.error('Билет с таким номером уже существует', 'Ошибка');
@@ -46,6 +47,10 @@ Template.createCrew.events({
         }
         if ((!dBirth) || (dBirth === '')) {
             toastr.error('Необходимо внести дату рождения', 'Ошибка');
+            return false
+        }
+        if ((!pnumber) || (pnumber === '')) {
+            toastr.error('Необходимо внести контактный номер', 'Ошибка');
             return false
         }
 
@@ -94,7 +99,7 @@ Template.createCrew.events({
                 globalUI.callback(function (id) {
                     Payments.insert({
                         payerId: id,
-                        paymentYear: 2002
+                        paymentYear: payment
                     })
                     toastr.success('Карточка члена клуба добавлена, оплата за ' + payment.toString() + ' год принята', 'Выполнено');
                     e.currentTarget.reset()
@@ -114,8 +119,16 @@ Template.createCrew.events({
         reader.readAsDataURL(e.currentTarget.files[0]);
         reader.onloadend = function () {
             base64data = reader.result;
-            Session.set('photo', base64data)
-            console.log(base64data);
+            var i = new Image();
+            i.onload = function() {
+                console.log(i.width)
+                if ((i.width != 100) || (i.height != 100)) {
+                    toastr.error('Фотография не соответствует допустимым размерам (100x100)', 'Ошибка');
+                } else {
+                    Session.set('photo', base64data)
+                }
+            }
+            i.src = base64data;
         }
         console.log(e.currentTarget.files)
     },

@@ -9,6 +9,11 @@ body {
   margin: 0;
 }
 
+p {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
 * {
   font-family: 'ubuntu', sans-serif;
 
@@ -25,6 +30,29 @@ body {
 
 .searchContent {
 
+}
+
+#viewContent {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-column-gap: 20px;
+}
+
+#viewContent div {
+  font-size: 0.92em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+}
+
+#viewContent .key {
+  color: rgba(0, 0, 0, 0.64);
+
+  font-weight: 600;
 }
 
 a {
@@ -44,6 +72,20 @@ h1 {
   font-family: 'ubuntu', sans-serif;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+h2 {
+  font-family: 'ubuntu', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+h4 {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 0.9em;
 }
 
 #fileMenu {
@@ -103,17 +145,7 @@ h1 {
 }
 
 #leftMenu {
-  float: left;
   margin: 0;
-  width: 200px;
-  border-top: 0px;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-color: rgba(0, 0, 0, 0.06);
-
 }
 
 #tNumber {
@@ -229,7 +261,6 @@ h1 {
 }
 
 #yield {
-  float: left;
   position: relative;
 }
 
@@ -258,6 +289,8 @@ h1 {
 }
 
 #content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
   min-height: 100%;
   width: 80%;
   margin-left: auto;
@@ -268,6 +301,13 @@ h1 {
 
 #leftMenu table {
   width: 100%;
+  border-top: 0px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.06);
 }
 
 #leftMenu table tr:hover {
@@ -351,6 +391,10 @@ h1 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.11);
 }
 
+body[birthday-alert] .bday-alert {
+  display: inline-block;
+}
+
 .bday-alert {
   color: #ff0000;
   display: none;
@@ -363,7 +407,7 @@ h1 {
 }
 
 .separator {
-
+clear: both;
 }
 
 .floatRight {
