@@ -2,7 +2,7 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '192.168.0.5',
+      host: '89.31.114.62',
       username: 'estp',
       // pem: './path/to/pem'
       password: 'Just4Fun',
@@ -11,7 +11,6 @@ module.exports = {
         port: 7722
       }
     }
-
   },
 
   app: {
@@ -20,23 +19,19 @@ module.exports = {
     path: '../',
 
     servers: {
-      one: {
-        env: {
-          PORT: 7722
-        }
-      },
+      one: {},
     },
 
-    /* buildOptions: {
+    buildOptions: {
       serverOnly: true,
-    }, */
+    },
 
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://192.168.0.5',
-      MONGO_URL: 'localhost',
-      //MONGO_OPLOG_URL: 'mongodb://mongodb/local',
+      ROOT_URL: 'http://89.31.114.62',
+      MONGO_URL: 'mongodb://localhost',
+      // MONGO_OPLOG_URL: 'mongodb://mongodb/local',
     },
 
     docker: {
@@ -54,7 +49,7 @@ module.exports = {
     servers: {
       one: {}
     }
-  },
+    },
 
   // (Optional)
   // Use the proxy to setup ssl or to route requests to the correct

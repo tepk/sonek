@@ -1,12 +1,12 @@
 {
-  // Server authentication info
   "servers": [
     {
-      "host": "192.168.0.5",
+      "host": "89.31.114.62",
       "username": "estp",
       "password": "Just4Fun"
       // or pem file (ssh based authentication)
-      //"pem": "~/Documents/sonek.pem"
+      //"pem": "~/Documents/artikton.pem"
+
     }
   ],
 
@@ -22,7 +22,7 @@
   // Install PhantomJS in the server
   "setupPhantom": false,
 
-  // Show a progress bar during the upload of the bundle to the server. 
+  // Show a progress bar during the upload of the bundle to the server.
   // Might cause an error in some rare cases if set to true, for instance in Shippable CI
   "enableUploadProgressBar": true,
 
@@ -34,7 +34,7 @@
 
   // Configure environment
   "env": {
-    "ROOT_URL": "http://192.168.0.5",
+    "ROOT_URL": "http://89.31.114.62",
     "MONGO_URL": "mongodb://localhost"
   },
 
