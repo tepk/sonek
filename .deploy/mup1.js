@@ -2,17 +2,20 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '1.2.3.4',
-      username: 'root',
+      host: '89.31.114.62',
+      username: 'estp',
       // pem: './path/to/pem'
-      // password: 'server-password'
+      password: 'Just4Fun',
       // or neither for authenticate from ssh-agent
+      opts: {
+        port: 7722
+      }
     }
   },
 
   app: {
     // TODO: change app name and path
-    name: 'app',
+    name: 'sonek',
     path: '../',
 
     servers: {
@@ -26,9 +29,9 @@ module.exports = {
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://app.com',
-      MONGO_URL: 'mongodb://mongodb/meteor',
-      MONGO_OPLOG_URL: 'mongodb://mongodb/local',
+      ROOT_URL: 'http://89.31.114.62',
+      MONGO_URL: 'mongodb://localhost',
+      // MONGO_OPLOG_URL: 'mongodb://mongodb/local',
     },
 
     docker: {
@@ -46,7 +49,7 @@ module.exports = {
     servers: {
       one: {}
     }
-  },
+    },
 
   // (Optional)
   // Use the proxy to setup ssl or to route requests to the correct

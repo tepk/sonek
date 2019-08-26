@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c890170-b720-4962-97ad-015e4b6cee31" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.deploy/mup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy/mup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy/mup.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/spinner.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/spinner.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/theme.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views/common/loading.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/common/loading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views/common/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/common/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/layout.html" afterDir="false" />
     </list>
     <ignored path="sonek.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.deploy/mup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+            <state relative-caret-position="548">
+              <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -205,7 +198,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-1895" />
+    <option name="y" value="55" />
     <option name="width" value="1920" />
     <option name="height" value="1110" />
   </component>
@@ -217,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,7 +253,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -275,19 +269,19 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/client/views" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/client/lib" />
-      <recent name="$PROJECT_DIR$/client/views/common" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/private" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/client/lib/plugins" />
       <recent name="$PROJECT_DIR$/client/lib" />
       <recent name="$PROJECT_DIR$/lib/plugins" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.deploy/Public" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/client/views" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/client/lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -340,16 +334,16 @@
       <workItem from="1564126123789" duration="7135000" />
       <workItem from="1565075478283" duration="1738000" />
       <workItem from="1565335037316" duration="2358000" />
-      <workItem from="1566315292959" duration="1507000" />
+      <workItem from="1566315292959" duration="1970000" />
+      <workItem from="1566465801517" duration="328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96791000" />
+    <option name="totallyTimeSpent" value="97582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1110" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26329648" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -687,19 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/issues/editIssue.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/security.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/issues/editIssue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -714,10 +695,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/issues/editIssue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/security.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.deploy/mup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        <state relative-caret-position="548">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
         </state>
       </provider>
     </entry>
