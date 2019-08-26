@@ -2,8 +2,12 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '1.2.3.4',
-      username: 'root',
+      host: '89.31.114.62',
+      username: 'estp',
+      password: 'Just4Fun',
+      opts: {
+        port: 7722
+      }
       // pem: './path/to/pem'
       // password: 'server-password'
       // or neither for authenticate from ssh-agent
@@ -12,7 +16,7 @@ module.exports = {
 
   app: {
     // TODO: change app name and path
-    name: 'app',
+    name: 'sonek',
     path: '../',
 
     servers: {
@@ -26,14 +30,14 @@ module.exports = {
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://app.com',
+      ROOT_URL: 'http://89.31.114.62',
       MONGO_URL: 'mongodb://mongodb/meteor',
       MONGO_OPLOG_URL: 'mongodb://mongodb/local',
     },
 
     docker: {
       // change to 'abernix/meteord:base' if your app is using Meteor 1.4 - 1.5
-      image: 'abernix/meteord:base',
+      image: 'abernix/meteord:node-8.4.0-base',
     },
 
     // Show progress bar while uploading bundle to server
@@ -42,7 +46,7 @@ module.exports = {
   },
 
   mongo: {
-    version: '2.6.7',
+    version: '4.0.6',
     servers: {
       one: {}
     }
