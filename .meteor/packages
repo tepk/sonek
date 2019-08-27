@@ -1,9 +1,11 @@
 standard-app-packages
 iron:router
 flemay:less-autoprefixer
-accounts-base
-accounts-password
-insecure
+accounts-base@1.4.3
+accounts-password@1.5.1
+insecure@1.0.7
 momentjs:moment
 chrismbeckett:toastr
-reactive-var
+reactive-var@1.0.11
+shell-server
+dynamic-import

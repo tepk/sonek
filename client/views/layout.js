@@ -18,7 +18,8 @@ Template.layout.helpers({
         /* console.log(Crew.findOne({userId: Meteor.userId()}).isAdmin)
         return Crew.findOne({userId: Meteor.userId()}).isAdmin */
         return true
-    }
+    },
+
 })
 
 Template.layout.events({
