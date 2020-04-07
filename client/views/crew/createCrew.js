@@ -99,7 +99,7 @@ Template.createCrew.events({
                 globalUI.callback(function (id) {
                     Payments.insert({
                         payerId: id,
-                        paymentYear: payment
+                        paymentYear: 2019
                     })
                     toastr.success('Карточка члена клуба добавлена, оплата за ' + payment.toString() + ' год принята', 'Выполнено');
                     e.currentTarget.reset()

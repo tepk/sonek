@@ -52,6 +52,9 @@ module.exports = {
     }
   },
 
+  // canc-du@mail.ru
+  // rfywtkzhbz
+
   // (Optional)
   // Use the proxy to setup ssl or to route requests to the correct
   // app when there are several apps

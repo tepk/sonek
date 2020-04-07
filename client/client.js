@@ -1,4 +1,4 @@
-Meteor.autorun(function () {
+/* Meteor.autorun(function () {
     var today = new Date().toISOString().substr(0, 10).substr(5, 5)
     var bArr = []
     var hasBirthdays = false
@@ -21,6 +21,6 @@ Meteor.autorun(function () {
         }
     }, 1000)
 
-});
+}); */
 
 console.log('haha')

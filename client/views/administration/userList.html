@@ -1,0 +1,29 @@
+<template name="userList">
+    {{#if Template.subscriptionsReady}}
+    <h1>Список локальных пользователей системы</h1>
+    <small>Сейчас вы {{current.username}}</small>
+    <form id="createNewUser">
+        <table class="cards-view">
+{{#if isAdmin}}
+            <tr class="card-with-photo" id="{{_id}}">
+
+                <td class="td1" id="userAddButton">ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ СИСТЕМЫ</td>
+                <td class="td2">
+                </td>
+
+            </tr>
+{{/if}}
+            {{#each showUserlist}}
+                <tr class="card-with-photo" id="{{_id}}">
+                    <td class="td1">{{username}}<br/><span class="small">{{rule.rule}}</span></td>
+                    <td class="td2">
+                        {{#if isAdmin}}<large>&times;</large>{{/if}}
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </form>
+{{/if}}
+
+
+</template>

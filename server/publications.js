@@ -14,5 +14,12 @@ Meteor.publish('payments', function() {
     }
 })
 
+Meteor.publish('userlist', function() {
+    return Meteor.users.find({});
+})
+
+Meteor.publish('rules', function() {
+    return Rules.find({});
+})
 
 

@@ -23,5 +23,9 @@ Template.viewCrew.events({
         console.log(this._id, + ' ' + paymentYear)
         e.preventDefault()
 
+    },
+    "click .print": function() {
+        window.print()
+        return false
     }
 })

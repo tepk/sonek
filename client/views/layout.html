@@ -1,5 +1,5 @@
 <head>
-    <title>SONEK ticket tracker</title>
+    <title>Учетные карточки ДУ СО РАН</title>
     <link rel="icon" href="/favicon.ico" type="image/ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,67 +8,69 @@
 
 <template name="layout">
     {{#if Template.subscriptionsReady}}
-    <div class="page-wrap">
+            {{> createUser}}
+        <div class="page-wrap">
 
             <div id="content">
                 <div id="leftMenu" class="noprint">
                     <table>
                         <tr>
-                            <td class="menu-item"><img src="/images/logo.png" /></td>
+                            <td class="menu-item"><img src="/images/logo.png"/></td>
                         </tr>
-                {{#if currentUser}}
-                        <tr>
-                            <td class="menu-item"><a href="/">Учетные карточки</a></td>
-                        </tr>
-                        <tr>
-                            <td class="menu-item"><span class="bday-alert">&#9728;</span><a href="/birthDays">Дни рождения</a><span class="bday-alert">&#9728;</span></td>
-                        </tr>
-                        <tr>
-                            <td class="menu-item"><a href="/createCrew">Регистрация участника</a></td>
-                        </tr>
-                        <tr>
-                            <td class="menu-item"></td>
-                        </tr>
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                    <tr>
-                        <td class="menu-item"><a href="#" id="logout">Выход</a></td>
-                    </tr>
-                    {{else}}
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                    <tr>
-                        <td class="menu-item"></td>
-                    </tr>
-                {{/if}}
+                        {{#if currentUser}}
+                            <tr>
+                                <td class="menu-item"><a href="/">Учетные карточки</a></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"><span class="bday-alert">&#9728;</span><a href="/birthDays">Дни
+                                    рождения</a><span class="bday-alert">&#9728;</span></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"><a href="/createCrew">Регистрация участника</a></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"><a href="/userList">Локальные пользователи</a></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"><a href="#" id="logout">Выход</a></td>
+                            </tr>
+                        {{else}}
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                            <tr>
+                                <td class="menu-item"></td>
+                            </tr>
+                        {{/if}}
 
 
                     </table>
                 </div>
                 {{#if currentUser}}
-                <div id="yield">
-                {{> yield}}
-                </div>
+                    <div id="yield">
+                        {{> yield}}
+                    </div>
                 {{else}}
                     {{> login}}
                 {{/if}}
             </div>
 
 
-    </div>
+        </div>
     {{/if}}
 </template>

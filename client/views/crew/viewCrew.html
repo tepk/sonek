@@ -2,8 +2,10 @@
     <h1 class="noprint">Просмотр карточки</h1>
     <h2>Членский билет №{{data.tNumber}}</h2>
     <h4>от {{data.dCreated}}</h4>
+
     <div id="viewContent">
-        <img src="{{data.photo}}" style="float: left; margin-right: 15px;"/>
+
+            <img src="{{data.photo}}" style="float: left; margin-right: 15px;"/>
         <div>
             <span class="key">Фамилия</span><span class="value">{{data.lname}}</span>
             <span class="key">Имя и отчество</span><span class="value">{{data.fname}}</span>
@@ -18,10 +20,8 @@
             <span class="key">Телефон</span><span class="value">{{data.pnumber}}</span>
             <span class="key">Электронная почта</span><span class="value">{{data.email}}</span>
             <span class="key">Получать уведомления</span><span class="value">{{#if data.alert}}по электронной почте{{else}}почтой России{{/if}}</span>
-
-            <!-- <p>Фамилия: {{data.lname}}<br/>Имя и отчество: {{data.fname}}<br/>Дата рождения: {{data.hDate}}</p>
-            <p>Специальность: {{data.speciality}}<br/>Ученая степень: {{data.aDegree}}</p>
-            <p>Место работы: {{data.job}}<br/>Занимаемая должность: {{data.position}}</p> -->
         </div>
     </div>
+    <br />
+    <span class="noprint print">распечатать карточку</span>
 </template>
