@@ -169,39 +169,12 @@ h4 {
   margin: 0;
 }
 
-#tNumber {
-  height: 1em;
-  font-size: 1em;
-  width: 2.6em;
-}
 
-#dCreated {
-  height: 1em;
-  font-size: 1em;
-  width: 9em;
-}
 
-#dBirth {
-  height: 1.2em;
-  font-size: 1em;
-  width: 9em;
-  margin-bottom: 5px;
-  color: rgba(0, 0, 0, 0.61);
-}
 
-#job {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
 
-#speciality {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
+
+
 
 #alert {
   height: 1.2em;
@@ -214,63 +187,13 @@ h4 {
 }
 
 
-#aDegree {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
 
-#pnumber {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
-#email {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
-#address {
-  height: 1em;
-  font-size: 1em;
-  width: 15em;
-  margin-bottom: 5px;
-}
 
-#position {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
-
-#section {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
 
 .avatar {
   height: 100px;
 }
 
-#lname {
-  height: 1em;
-  font-size: 1em;
-  width: 11em;
-  margin-bottom: 5px;
-}
-
-#fname {
-  height: 1em;
-  font-size: 1em;
-  width: 15em;
-  margin-bottom: 5px;
-}
 
 .header {
   text-align: center;
@@ -285,7 +208,7 @@ h4 {
   position: relative;
 }
 
-#createMember {
+#createMember, #editMember {
   width: 500px;
   margin-left: 120px;
 }
@@ -293,6 +216,28 @@ h4 {
 #createMember table {
   width: 500px;
   border: 1px solid;
+}
+
+#headerGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: 865px;
+  margin: 20px 7px 10px 20px;
+  margin-top: 20px;
+  grid-column-gap: 15px;
+  grid-auto-rows: auto;
+  grid-row-gap: 10px;
+}
+
+#cardGrid {
+  display: grid;
+  grid-template-columns: minmax(auto, 150px) 1fr;
+  max-width: 865px;
+  margin: 20px 7px 10px 20px;
+  margin-top: 20px;
+  grid-column-gap: 15px;
+  grid-auto-rows: auto;
+  grid-row-gap: 10px;
 }
 
 #createMember td .header {
@@ -334,6 +279,19 @@ h4 {
 #leftMenu table tr:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
+
+#dCreated {
+  height: 1.2em;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.61);
+  border-width: 1px;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+
 
 
 .menu-item {
@@ -515,5 +473,42 @@ tr.members:hover {
   margin-left: 92%;
   border-bottom: 1px dashed;
   cursor: pointer;
+}
+
+#tNumber {
+  height: 1em;
+  font-size: 1em;
+}
+.newCreate {
+  width: 3em;
+  border-width: 1px;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  border-color: #000;
+  line-height: 1.2em;
+  font-size: 1em;
+  text-align: center;
+}
+
+#lname {
+  height: 1em;
+  font-size: 1em;
+}
+.gridCardInput {
+  line-height: 1.1em;
+  font-size: 1em;
+  border-width: 1px;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  border-color: rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+#dBirth {
+  height: 1.2em;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.61);
 }
 

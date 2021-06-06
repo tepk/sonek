@@ -29,6 +29,17 @@ Router.route('/viewIssue/:_id', function () {
 
 }, {name: 'viewIssue'});
 
+Router.route('/editCrew/:_id', function () {
+    var params = this.params;
+    var id = params._id;
+    this.render('editCrew', {
+        data: function () {
+            return {_id: this.params._id};
+        }
+    });
+
+}, {name: 'editCrew'});
+
 Router.route('/viewCrew/:_id', function () {
     var params = this.params;
     var id = params._id;
